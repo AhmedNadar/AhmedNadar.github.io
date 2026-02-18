@@ -2,25 +2,84 @@
 layout: default
 ---
 
-<!-- Hero section -->
+<!-- Hero: Clear identity, not just a name -->
 <section class="hero">
   <div class="container">
     <p class="hero-label">{{ site.author.location }}</p>
     <h1 class="hero-title">{{ site.author.name }}</h1>
-    <p class="hero-subtitle">{{ site.author.bio }}</p>
+    <p class="hero-role">{{ site.author.role }}</p>
+    <p class="hero-subtitle">I help businesses and founders go from idea to production app — fast. <br>UI components, frontend architecture, full product builds. All Rails.</p>
   </div>
 </section>
 
-<!-- Main content from index.md goes here -->
-<div class="container">
-  {{ content }}
-</div>
+<!-- Currently: What's alive right now -->
+<section class="currently">
+  <div class="container">
+    <div class="currently-inner">
+      <h2 class="currently-label">Right now</h2>
+      <div class="currently-content">
+        {{ content }}
+      </div>
+    </div>
+  </div>
+</section>
 
-<!-- Latest Posts -->
+<!-- Products: Featured project first, then grid -->
+{% if site.projects.size > 0 %}
+<section class="section section-alt">
+  <div class="container">
+    <h2 class="section-title">Products I've Built</h2>
+
+    {% assign featured = site.projects | where: "featured", true | first %}
+    {% if featured %}
+    <article class="project-featured">
+      <div class="project-featured-content">
+        <span class="project-featured-badge">Latest</span>
+        <h3 class="project-featured-title">
+          <a href="{{ featured.url | relative_url }}">{{ featured.title }}</a>
+        </h3>
+        <p class="project-featured-desc">{{ featured.description }}</p>
+        {% if featured.link %}
+        <a href="{{ featured.link }}" class="project-visit-link" target="_blank" rel="noopener">{{ featured.link | remove: 'https://' }} &nearr;</a>
+        {% endif %}
+      </div>
+    </article>
+    {% endif %}
+
+    <div class="projects-grid">
+      {% for project in site.projects %}
+      {% unless project.featured %}
+      <article class="project-card">
+        <h3 class="project-card-title">
+          <a href="{{ project.url | relative_url }}">{{ project.title }}</a>
+        </h3>
+        <p class="project-card-desc">{{ project.description }}</p>
+        {% if project.link %}
+        <a href="{{ project.link }}" class="project-link" target="_blank" rel="noopener">{{ project.link | remove: 'https://' }} &nearr;</a>
+        {% endif %}
+      </article>
+      {% endunless %}
+      {% endfor %}
+    </div>
+  </div>
+</section>
+{% endif %}
+
+<!-- Philosophy: What you believe, short and punchy -->
+<section class="philosophy">
+  <div class="container container-narrow">
+    <blockquote class="philosophy-quote">
+      One developer with Rails can build what teams of ten build with React. Simple solutions beat clever ones. The best tools feel obvious once you use them.
+    </blockquote>
+  </div>
+</section>
+
+<!-- Latest Writing -->
+{% if site.posts.size > 0 %}
 <section class="section">
   <div class="container">
-    <h2 class="section-title">Latest Writing</h2>
-    {% assign posts = site.posts | slice: 0, 5 %}
+    <h2 class="section-title">Writing</h2>
+    {% assign posts = site.posts | slice: 0, 3 %}
     {% for post in posts %}
     <article class="post-card">
       <time class="post-date" datetime="{{ post.date | date_to_xmlschema }}">
@@ -31,36 +90,25 @@ layout: default
       </h3>
       {% if post.description %}
       <p class="post-card-excerpt">{{ post.description }}</p>
-      {% else %}
-      <p class="post-card-excerpt">{{ post.excerpt | strip_html | truncatewords: 30 }}</p>
       {% endif %}
     </article>
     {% endfor %}
 
-    {% if site.posts.size > 5 %}
+    {% if site.posts.size > 3 %}
     <a href="{{ '/posts/' | relative_url }}" class="view-all">All posts &rarr;</a>
     {% endif %}
   </div>
 </section>
+{% endif %}
 
-<!-- Projects -->
-{% if site.projects.size > 0 %}
-<section class="section section-alt">
-  <div class="container">
-    <h2 class="section-title">Products &amp; Projects</h2>
-    <div class="projects-grid">
-      {% for project in site.projects %}
-      <article class="project-card">
-        <h3 class="project-card-title">
-          <a href="{{ project.url | relative_url }}">{{ project.title }}</a>
-        </h3>
-        <p class="project-card-desc">{{ project.description }}</p>
-        {% if project.link %}
-        <a href="{{ project.link }}" class="project-link" target="_blank" rel="noopener">{{ project.link | remove: 'https://' }} &nearr;</a>
-        {% endif %}
-      </article>
-      {% endfor %}
+<!-- Work With Me: Clear CTA -->
+<section class="work-with-me">
+  <div class="container container-narrow">
+    <h2 class="work-with-me-title">Let's build something</h2>
+    <p class="work-with-me-desc">Have an idea? Need a Rails developer who thinks about product, not just code? I help businesses go from concept to shipped product.</p>
+    <div class="work-with-me-links">
+      <a href="mailto:hello@ahmednadar.com" class="cta-button">Get in touch</a>
+      <a href="{{ '/about/' | relative_url }}" class="cta-link">Learn more about me &rarr;</a>
     </div>
   </div>
 </section>
-{% endif %}
