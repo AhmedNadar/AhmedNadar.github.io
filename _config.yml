@@ -1,0 +1,11 @@
+title: Ahmed Nadar
+description: Rails developer. Building products, shipping code.
+url: "https://ahmednadar.com"
+baseurl: ""
+permalink: /:title/
+markdown: kramdown
+
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-sitemap
