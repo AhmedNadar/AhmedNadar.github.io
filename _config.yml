@@ -1,11 +1,28 @@
 title: Ahmed Nadar
-description: Rails developer. Building products, shipping code.
+description: "Rails developer building products in Toronto."
 url: "https://ahmednadar.com"
 baseurl: ""
 permalink: /:title/
 markdown: kramdown
 
+author:
+  name: Ahmed Nadar
+  bio: "Rails developer. I build products, ship code, and write about it."
+  location: "Toronto, Canada"
+  github: AhmedNadar
+  twitter: ahmednadar
+
+collections:
+  projects:
+    output: true
+    permalink: /projects/:title/
+
 plugins:
   - jekyll-feed
   - jekyll-seo-tag
   - jekyll-sitemap
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md
