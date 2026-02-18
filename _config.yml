@@ -1,28 +1,29 @@
 # Site Settings
 title: Ahmed Nadar
-description: "Rails developer and product builder in Toronto. I help businesses turn ideas into production apps with Ruby on Rails."
+description: "Rails developer and product builder in Toronto. I pair Ruby on Rails with AI tools to ship production apps at startup speed."
 url: "https://ahmednadar.com"
 baseurl: ""
 permalink: /:title/
 markdown: kramdown
 
-# Author info (used across layouts)
+# Author
 author:
   name: Ahmed Nadar
-  role: "Rails Developer & Product Builder"
-  tagline: "I turn ideas into products with Ruby on Rails."
+  role: "Software Developer & Product Builder"
+  tagline: "I pair Ruby on Rails with AI agents to ship products fast."
   location: "Toronto, Canada"
   github: AhmedNadar
   twitter: ahmednadar
   linkedin: ahmednadar
+  availability: "Q2 2026 and beyond"
 
-# Collections (for project pages)
+# Collections
 collections:
   projects:
     output: true
     permalink: /projects/:title/
 
-# Build settings
+# Build
 sass:
   style: compressed
   sass_dir: _sass
@@ -32,7 +33,6 @@ plugins:
   - jekyll-seo-tag
   - jekyll-sitemap
 
-# Exclude from build
 exclude:
   - Gemfile
   - Gemfile.lock
