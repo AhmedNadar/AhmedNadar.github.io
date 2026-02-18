@@ -2,18 +2,27 @@
 layout: default
 ---
 
-<!-- Hero: Clear identity, not just a name -->
-<section class="hero">
-  <div class="container">
-    <p class="hero-label">{{ site.author.location }}</p>
-    <h1 class="hero-title">{{ site.author.name }}</h1>
-    <p class="hero-role">{{ site.author.role }}</p>
-    <p class="hero-subtitle">I help businesses and founders go from idea to production app — fast. <br>UI components, frontend architecture, full product builds. All Rails.</p>
+<!-- =============================================
+     HERO — Large editorial serif headline,
+     warm gradient backdrop, service tags.
+     Content starts hidden, fades up after splash exits.
+     ============================================= -->
+<section class="hero reveal">
+  <div class="hero-gradient"></div>
+  <div class="container hero-content">
+    
+    <h1 class="hero-title reveal-child">Building for <em>results</em>.</h1>
+    <div class="hero-tags reveal-child">
+      <span>Rails</span>
+      <span>AI-Augmented</span>
+      <span>Products</span>
+    </div>
+    <p class="hero-desc reveal-child">I pair Ruby on Rails with AI agents to ship production apps at startup speed. Full product builds, from idea to live users.</p>
   </div>
 </section>
 
-<!-- Currently: What's alive right now -->
-<section class="currently">
+<!-- Currently -->
+<section class="currently reveal">
   <div class="container">
     <div class="currently-inner">
       <h2 class="currently-label">Right now</h2>
@@ -24,15 +33,42 @@ layout: default
   </div>
 </section>
 
-<!-- Products: Featured project first, then grid -->
+<!-- I Build Products -->
+<section class="narrative-section reveal">
+  <div class="container container-narrow">
+    <p class="section-label reveal-child">What I do</p>
+    <h2 class="narrative-heading reveal-child">I build products.</h2>
+    <div class="narrative-body reveal-child">
+      <p>I started in design, moved to frontend, and landed on the thing I care about most: building products that people actually use. Not prototypes. Not demos. Real products with real customers.</p>
+      <p>Everything I build runs on my own Ruby on Rails stack and I pair it with AI tools like Claude Code to ship at a pace that used to require entire teams. <strong>FixOurHood was built 90% with AI-assisted development and is live in production.</strong> That's the workflow now: deep problem domain knowledge and developer expertise paired with AI speed.</p>
+    </div>
+    <a href="{{ '/about/' | relative_url }}" class="narrative-link reveal-child">A little more about me</a>
+  </div>
+</section>
+
+<!-- I Write Code -->
+<section class="narrative-section narrative-section-alt reveal">
+  <div class="container container-narrow">
+    <p class="section-label reveal-child">My craft</p>
+    <h2 class="narrative-heading reveal-child">I write code — with AI.</h2>
+    <div class="narrative-body reveal-child">
+      <p>I got my start as a designer, but became obsessed with the gap between beautiful mockups and real, working software. That led to years of frontend & backend development, then UI component architecture, and now building full products from scratch.</p>
+      <p>Today I work with AI as a development partner. Claude Code, cursor-based workflows, agentic tools, I use them daily to write, review, and ship code faster. <strong>Not to replace thinking, but to multiply output.</strong> The result: I ship products in weeks that used to take months.</p>
+    </div>
+    <a href="{{ '/projects/' | relative_url }}" class="narrative-link reveal-child">See what I've built</a>
+  </div>
+</section>
+
+<!-- Products & Projects -->
 {% if site.projects.size > 0 %}
-<section class="section section-alt">
+<section class="section section-work reveal">
   <div class="container">
-    <h2 class="section-title">Products I've Built</h2>
+    <p class="section-label reveal-child">Work</p>
+    <h2 class="section-heading reveal-child">Products & Projects</h2>
 
     {% assign featured = site.projects | where: "featured", true | first %}
     {% if featured %}
-    <article class="project-featured">
+    <article class="project-featured reveal-child">
       <div class="project-featured-content">
         <span class="project-featured-badge">Latest</span>
         <h3 class="project-featured-title">
@@ -49,7 +85,7 @@ layout: default
     <div class="projects-grid">
       {% for project in site.projects %}
       {% unless project.featured %}
-      <article class="project-card">
+      <article class="project-card reveal-child">
         <h3 class="project-card-title">
           <a href="{{ project.url | relative_url }}">{{ project.title }}</a>
         </h3>
@@ -65,23 +101,24 @@ layout: default
 </section>
 {% endif %}
 
-<!-- Philosophy: What you believe, short and punchy -->
-<section class="philosophy">
+<!-- Philosophy -->
+<section class="philosophy reveal">
   <div class="container container-narrow">
-    <blockquote class="philosophy-quote">
-      One developer with Rails can build what teams of ten build with React. Simple solutions beat clever ones. The best tools feel obvious once you use them.
+    <blockquote class="philosophy-quote reveal-child">
+      One developer with Rails and AI can build what used to take a team. Simple solutions beat clever ones. The best tools feel obvious once you use them.
     </blockquote>
   </div>
 </section>
 
-<!-- Latest Writing -->
+<!-- Writing -->
 {% if site.posts.size > 0 %}
-<section class="section">
+<section class="section reveal">
   <div class="container">
-    <h2 class="section-title">Writing</h2>
+    <p class="section-label reveal-child">Writing</p>
+    <h2 class="section-heading reveal-child">Latest Posts</h2>
     {% assign posts = site.posts | slice: 0, 3 %}
     {% for post in posts %}
-    <article class="post-card">
+    <article class="post-card reveal-child">
       <time class="post-date" datetime="{{ post.date | date_to_xmlschema }}">
         {{ post.date | date: "%B %-d, %Y" }}
       </time>
@@ -95,20 +132,22 @@ layout: default
     {% endfor %}
 
     {% if site.posts.size > 3 %}
-    <a href="{{ '/posts/' | relative_url }}" class="view-all">All posts &rarr;</a>
+    <a href="{{ '/posts/' | relative_url }}" class="narrative-link reveal-child">All posts</a>
     {% endif %}
   </div>
 </section>
 {% endif %}
 
-<!-- Work With Me: Clear CTA -->
-<section class="work-with-me">
+<!-- CTA + Availability -->
+<section class="work-with-me reveal">
   <div class="container container-narrow">
-    <h2 class="work-with-me-title">Let's build something</h2>
-    <p class="work-with-me-desc">Have an idea? Need a Rails developer who thinks about product, not just code? I help businesses go from concept to shipped product.</p>
-    <div class="work-with-me-links">
-      <a href="mailto:hello@ahmednadar.com" class="cta-button">Get in touch</a>
-      <a href="{{ '/about/' | relative_url }}" class="cta-link">Learn more about me &rarr;</a>
+    <p class="section-label reveal-child">Get in touch</p>
+    <h2 class="work-with-me-title reveal-child">Let's build something</h2>
+    <p class="work-with-me-desc reveal-child">Need a Rails developer with UI expertise who ships fast with AI-augmented workflows? I help businesses go from concept to production, in weeks, not months.</p>
+    <p class="availability reveal-child">Currently booking for <strong>{{ site.author.availability | default: "Q2 2026 and beyond" }}</strong></p>
+    <div class="work-with-me-links reveal-child">
+      <a href="mailto:ahmed@ahmednadar.com?subject=Let's build something" class="cta-button">Contact</a>
+      <a href="{{ '/about/' | relative_url }}" class="cta-link">Learn more about me</a>
     </div>
   </div>
 </section>

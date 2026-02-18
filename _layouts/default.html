@@ -3,24 +3,35 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>{% if page.title %}{{ page.title }} — {{ site.title }}{% else %}{{ site.title }}{% endif %}</title>
+  <title>{% if page.title and page.title != "Home" %}{{ page.title }} — {{ site.title }}{% else %}{{ site.title }}{% endif %}</title>
   <meta name="description" content="{{ page.description | default: site.description }}">
 
-  <!-- Fonts: Newsreader for headings (editorial), Source Sans for body (clean) -->
+  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,700;1,6..72,400&family=Source+Sans+3:wght@400;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&family=DM+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 
-  <!-- Styles -->
   <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
-
-  <!-- SEO -->
   {% seo %}
-
-  <!-- RSS Feed -->
   {% feed_meta %}
 </head>
-<body>
+<body{% if page.layout == 'home' %} class="has-splash"{% endif %}>
+
+  <!-- =============================================
+       SPLASH OVERLAY — Homepage only
+       A full-screen warm gradient that holds for ~2s,
+       shows name + role, then slides up to reveal page.
+       Plays once per page load (not per session).
+       ============================================= -->
+  {% if page.layout == 'home' %}
+  <div class="splash" id="splash">
+    <div class="splash-inner">
+      <p class="splash-name">{{ site.author.name }}</p>
+      <p class="splash-role">{{ site.author.role }}</p>
+    </div>
+  </div>
+  {% endif %}
+
   {% include header.html %}
 
   <main class="site-content">
@@ -28,5 +39,76 @@
   </main>
 
   {% include footer.html %}
+
+  <script>
+  (function() {
+    'use strict';
+
+    /* --------------------------------------------------
+       SPLASH — fade in content, hold, then slide up
+       -------------------------------------------------- */
+    var splash = document.getElementById('splash');
+    if (splash) {
+      // Lock scroll while splash is visible
+      document.body.style.overflow = 'hidden';
+
+      // After 2.4s total (0.8s entrance + 1.6s hold), exit
+      setTimeout(function() {
+        splash.classList.add('splash--exit');
+        document.body.style.overflow = '';
+      }, 2400);
+
+      // Remove element after exit animation finishes
+      splash.addEventListener('transitionend', function(e) {
+        if (e.propertyName === 'transform') {
+          splash.remove();
+          document.body.classList.remove('has-splash');
+        }
+      });
+    }
+
+    /* --------------------------------------------------
+       SCROLL REVEAL — smooth fade-up on viewport entry
+       Uses IntersectionObserver. Each .reveal element
+       transitions from opacity:0 + translateY(40px) to
+       its natural position. Children with .reveal-child
+       get staggered delays.
+       -------------------------------------------------- */
+    if ('IntersectionObserver' in window) {
+      var observer = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, {
+        threshold: 0.08,
+        rootMargin: '0px 0px -60px 0px'
+      });
+
+      // Observe all .reveal elements
+      document.querySelectorAll('.reveal').forEach(function(el) {
+        observer.observe(el);
+      });
+    } else {
+      // Fallback: just show everything
+      document.querySelectorAll('.reveal').forEach(function(el) {
+        el.classList.add('is-visible');
+      });
+    }
+
+    /* --------------------------------------------------
+       MOBILE NAV TOGGLE
+       -------------------------------------------------- */
+    var toggle = document.querySelector('.menu-toggle');
+    if (toggle) {
+      toggle.addEventListener('click', function() {
+        document.body.classList.toggle('nav-open');
+      });
+    }
+  })();
+  </script>
+
 </body>
 </html>
