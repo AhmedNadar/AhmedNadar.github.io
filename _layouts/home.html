@@ -1,0 +1,66 @@
+---
+layout: default
+---
+
+<!-- Hero section -->
+<section class="hero">
+  <div class="container">
+    <p class="hero-label">{{ site.author.location }}</p>
+    <h1 class="hero-title">{{ site.author.name }}</h1>
+    <p class="hero-subtitle">{{ site.author.bio }}</p>
+  </div>
+</section>
+
+<!-- Main content from index.md goes here -->
+<div class="container">
+  {{ content }}
+</div>
+
+<!-- Latest Posts -->
+<section class="section">
+  <div class="container">
+    <h2 class="section-title">Latest Writing</h2>
+    {% assign posts = site.posts | slice: 0, 5 %}
+    {% for post in posts %}
+    <article class="post-card">
+      <time class="post-date" datetime="{{ post.date | date_to_xmlschema }}">
+        {{ post.date | date: "%B %-d, %Y" }}
+      </time>
+      <h3 class="post-card-title">
+        <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+      </h3>
+      {% if post.description %}
+      <p class="post-card-excerpt">{{ post.description }}</p>
+      {% else %}
+      <p class="post-card-excerpt">{{ post.excerpt | strip_html | truncatewords: 30 }}</p>
+      {% endif %}
+    </article>
+    {% endfor %}
+
+    {% if site.posts.size > 5 %}
+    <a href="{{ '/posts/' | relative_url }}" class="view-all">All posts &rarr;</a>
+    {% endif %}
+  </div>
+</section>
+
+<!-- Projects -->
+{% if site.projects.size > 0 %}
+<section class="section section-alt">
+  <div class="container">
+    <h2 class="section-title">Products &amp; Projects</h2>
+    <div class="projects-grid">
+      {% for project in site.projects %}
+      <article class="project-card">
+        <h3 class="project-card-title">
+          <a href="{{ project.url | relative_url }}">{{ project.title }}</a>
+        </h3>
+        <p class="project-card-desc">{{ project.description }}</p>
+        {% if project.link %}
+        <a href="{{ project.link }}" class="project-link" target="_blank" rel="noopener">{{ project.link | remove: 'https://' }} &nearr;</a>
+        {% endif %}
+      </article>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+{% endif %}

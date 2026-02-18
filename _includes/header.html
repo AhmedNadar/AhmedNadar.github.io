@@ -1,0 +1,19 @@
+<header class="site-header">
+  <div class="container site-header-inner">
+    <a href="{{ '/' | relative_url }}" class="site-logo">
+      {{ site.title }}
+    </a>
+
+    <nav class="site-nav">
+      <a href="{{ '/about/' | relative_url }}" {% if page.url == '/about/' %}class="active"{% endif %}>About</a>
+      <a href="{{ '/projects/' | relative_url }}" {% if page.url contains '/projects' %}class="active"{% endif %}>Projects</a>
+      <a href="{{ '/posts/' | relative_url }}" {% if page.url == '/posts/' or page.layout == 'post' %}class="active"{% endif %}>Writing</a>
+    </nav>
+
+    <!-- Mobile menu toggle (no JS library needed) -->
+    <button class="menu-toggle" aria-label="Toggle navigation" onclick="document.body.classList.toggle('nav-open')">
+      <span></span>
+      <span></span>
+    </button>
+  </div>
+</header>
