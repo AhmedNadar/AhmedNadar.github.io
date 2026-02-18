@@ -3,14 +3,11 @@
    Editorial, confident, developer-focused.
    
    Typography: Newsreader (serif headings) + Source Sans 3 (body)
-   + JetBrains Mono (code). This pairing gives an editorial feel
-   without being stuffy — the serif adds gravitas to titles while
-   the sans-serif body stays readable and modern.
+   + JetBrains Mono (code).
    ========================================================== */
 
-/* --- CSS Variables (your design tokens) --- */
+/* --- CSS Variables --- */
 :root {
-  /* Colors: Warm dark palette with a copper accent */
   --color-bg: #faf8f5;
   --color-bg-alt: #f0ece6;
   --color-text: #2c2826;
@@ -18,11 +15,11 @@
   --color-text-light: #9a9490;
   --color-accent: #b45a2b;
   --color-accent-hover: #8f4720;
+  --color-accent-light: rgba(180, 90, 43, 0.08);
   --color-border: #e0dbd4;
   --color-code-bg: #2c2826;
   --color-code-text: #e8e0d8;
 
-  /* Typography scale (fluid, responsive) */
   --font-serif: 'Newsreader', Georgia, serif;
   --font-sans: 'Source Sans 3', -apple-system, sans-serif;
   --font-mono: 'JetBrains Mono', 'Fira Code', monospace;
@@ -36,7 +33,6 @@
   --text-3xl: 2.8rem;
   --text-4xl: 3.6rem;
 
-  /* Spacing */
   --space-xs: 0.5rem;
   --space-sm: 1rem;
   --space-md: 1.5rem;
@@ -44,11 +40,9 @@
   --space-xl: 5rem;
   --space-2xl: 8rem;
 
-  /* Layout */
   --container-max: 72rem;
   --content-max: 42rem;
 
-  /* Transitions */
   --transition: 0.2s ease;
 }
 
@@ -75,21 +69,19 @@ body {
   background-color: var(--color-bg);
 }
 
-/* Selection highlight matches the accent */
 ::selection {
   background: var(--color-accent);
   color: #fff;
 }
 
 
-/* --- Layout Containers --- */
+/* --- Layout --- */
 .container {
   max-width: var(--container-max);
   margin: 0 auto;
   padding: 0 var(--space-md);
 }
 
-/* Narrower container for reading content (posts, pages) */
 .container-narrow {
   max-width: var(--content-max);
   margin: 0 auto;
@@ -110,19 +102,14 @@ h2 { font-size: var(--text-2xl); margin-bottom: var(--space-sm); }
 h3 { font-size: var(--text-xl); margin-bottom: var(--space-xs); }
 h4 { font-size: var(--text-lg); margin-bottom: var(--space-xs); }
 
-p {
-  margin-bottom: var(--space-md);
-}
+p { margin-bottom: var(--space-md); }
 
 a {
   color: var(--color-accent);
   text-decoration: none;
   transition: color var(--transition);
 }
-
-a:hover {
-  color: var(--color-accent-hover);
-}
+a:hover { color: var(--color-accent-hover); }
 
 strong { font-weight: 600; }
 
@@ -148,7 +135,6 @@ img {
   border-radius: 4px;
 }
 
-/* Lists inside content */
 .post-body ul, .post-body ol,
 .page-body ul, .page-body ol {
   margin-bottom: var(--space-md);
@@ -160,7 +146,7 @@ img {
 }
 
 
-/* --- Code Styling --- */
+/* --- Code --- */
 code {
   font-family: var(--font-mono);
   font-size: 0.88em;
@@ -169,7 +155,6 @@ code {
   border-radius: 3px;
 }
 
-/* Fenced code blocks (``` ```) */
 pre {
   background: var(--color-code-bg);
   color: var(--color-code-text);
@@ -189,17 +174,14 @@ pre code {
 
 
 /* ==========================================================
-   HEADER & NAVIGATION
-   Fixed top bar. Minimal. Logo left, links right.
+   HEADER
    ========================================================== */
 .site-header {
   position: sticky;
   top: 0;
   z-index: 100;
-  background: var(--color-bg);
   border-bottom: 1px solid var(--color-border);
   backdrop-filter: blur(8px);
-  /* Slight transparency for the blur effect */
   background: rgba(250, 248, 245, 0.92);
 }
 
@@ -218,10 +200,7 @@ pre code {
   text-decoration: none;
   letter-spacing: -0.02em;
 }
-
-.site-logo:hover {
-  color: var(--color-accent);
-}
+.site-logo:hover { color: var(--color-accent); }
 
 .site-nav {
   display: flex;
@@ -246,7 +225,6 @@ pre code {
   border-bottom-color: var(--color-accent);
 }
 
-/* Mobile hamburger menu */
 .menu-toggle {
   display: none;
   background: none;
@@ -265,11 +243,8 @@ pre code {
   transition: all var(--transition);
 }
 
-/* Mobile: show hamburger, hide nav until toggled */
 @media (max-width: 640px) {
-  .menu-toggle {
-    display: flex;
-  }
+  .menu-toggle { display: flex; }
 
   .site-nav {
     display: none;
@@ -284,12 +259,7 @@ pre code {
     gap: var(--space-xs);
   }
 
-  /* When body has .nav-open class, show the nav */
-  body.nav-open .site-nav {
-    display: flex;
-  }
-
-  /* Animate the hamburger into an X */
+  body.nav-open .site-nav { display: flex; }
   body.nav-open .menu-toggle span:first-child {
     transform: rotate(45deg) translate(2px, 4px);
   }
@@ -300,11 +270,10 @@ pre code {
 
 
 /* ==========================================================
-   HERO SECTION (Homepage)
-   Large type, editorial feel, draws the eye.
+   HERO — Identity, not just a name
    ========================================================== */
 .hero {
-  padding: var(--space-2xl) 0 var(--space-xl);
+  padding: var(--space-xl) 0 var(--space-lg);
   border-bottom: 1px solid var(--color-border);
 }
 
@@ -320,35 +289,129 @@ pre code {
 .hero-title {
   font-size: var(--text-4xl);
   letter-spacing: -0.03em;
-  margin-bottom: var(--space-sm);
-  /* A subtle gradient on the title for warmth */
+  margin-bottom: 0.3rem;
   background: linear-gradient(135deg, var(--color-text) 0%, var(--color-accent) 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
 
+/* Role line — sits right under the name, different from the bio */
+.hero-role {
+  font-family: var(--font-mono);
+  font-size: var(--text-sm);
+  color: var(--color-accent);
+  letter-spacing: 0.02em;
+  margin-bottom: var(--space-md);
+}
+
 .hero-subtitle {
-  font-size: var(--text-xl);
+  font-size: var(--text-lg);
   color: var(--color-text-muted);
-  max-width: 36rem;
-  line-height: 1.5;
+  max-width: 38rem;
+  line-height: 1.6;
   margin-bottom: 0;
 }
 
-/* Responsive hero */
 @media (max-width: 640px) {
-  .hero {
-    padding: var(--space-xl) 0 var(--space-lg);
-  }
+  .hero { padding: var(--space-lg) 0 var(--space-md); }
+  .hero-title { font-size: var(--text-2xl); }
+  .hero-subtitle { font-size: var(--text-base); }
+}
 
-  .hero-title {
-    font-size: var(--text-2xl);
-  }
 
-  .hero-subtitle {
-    font-size: var(--text-base);
+/* ==========================================================
+   CURRENTLY — What's alive right now
+   A distinct visual block that feels like a sticky note
+   ========================================================== */
+.currently {
+  padding: var(--space-lg) 0;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.currently-inner {
+  display: flex;
+  gap: var(--space-lg);
+  align-items: baseline;
+}
+
+.currently-label {
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--color-accent);
+  white-space: nowrap;
+  min-width: 6rem;
+  /* Small accent dot before the label */
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.currently-label::before {
+  content: '';
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--color-accent);
+  /* Subtle pulse animation to signal "live" */
+  animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.4; }
+}
+
+.currently-content {
+  max-width: var(--content-max);
+}
+
+.currently-content p {
+  font-size: var(--text-base);
+  color: var(--color-text-muted);
+  margin-bottom: 0.5rem;
+  line-height: 1.6;
+}
+
+.currently-content p:last-child {
+  margin-bottom: 0;
+}
+
+/* Bold links inside currently section stand out */
+.currently-content strong {
+  color: var(--color-text);
+}
+
+@media (max-width: 640px) {
+  .currently-inner {
+    flex-direction: column;
+    gap: var(--space-sm);
   }
+}
+
+
+/* ==========================================================
+   PHILOSOPHY — A punchy belief statement
+   ========================================================== */
+.philosophy {
+  padding: var(--space-xl) 0;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.philosophy-quote {
+  font-family: var(--font-serif);
+  font-size: var(--text-xl);
+  font-style: normal;
+  font-weight: 400;
+  color: var(--color-text);
+  line-height: 1.6;
+  border-left: 3px solid var(--color-accent);
+  padding-left: var(--space-md);
+  margin: 0;
 }
 
 
@@ -379,55 +442,55 @@ pre code {
 
 
 /* ==========================================================
-   POST CARDS (on homepage listing)
+   FEATURED PROJECT — Larger, more prominent
    ========================================================== */
-.post-card {
-  padding: var(--space-md) 0;
-  border-bottom: 1px solid var(--color-border);
+.project-featured {
+  background: var(--color-bg);
+  border: 2px solid var(--color-accent);
+  border-radius: 8px;
+  padding: var(--space-lg);
+  margin-bottom: var(--space-lg);
+  position: relative;
 }
 
-.post-card:last-child {
-  border-bottom: none;
-}
-
-.post-date {
-  display: block;
+.project-featured-badge {
+  font-family: var(--font-mono);
   font-size: var(--text-xs);
-  font-weight: 600;
+  font-weight: 500;
   text-transform: uppercase;
-  letter-spacing: 0.06em;
-  color: var(--color-text-light);
-  margin-bottom: 0.3rem;
+  letter-spacing: 0.08em;
+  color: #fff;
+  background: var(--color-accent);
+  padding: 0.2rem 0.6rem;
+  border-radius: 3px;
+  display: inline-block;
+  margin-bottom: var(--space-sm);
 }
 
-.post-card-title {
-  font-size: var(--text-xl);
-  margin-bottom: 0.4rem;
+.project-featured-title {
+  font-size: var(--text-2xl);
+  margin-bottom: var(--space-xs);
 }
 
-.post-card-title a {
+.project-featured-title a {
   color: var(--color-text);
-  text-decoration: none;
 }
-
-.post-card-title a:hover {
+.project-featured-title a:hover {
   color: var(--color-accent);
 }
 
-.post-card-excerpt {
+.project-featured-desc {
+  font-size: var(--text-base);
   color: var(--color-text-muted);
-  font-size: var(--text-sm);
-  margin-bottom: 0;
+  max-width: 36rem;
   line-height: 1.6;
+  margin-bottom: var(--space-sm);
 }
 
-.view-all {
-  display: inline-block;
-  margin-top: var(--space-md);
-  font-size: var(--text-sm);
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.04em;
+@media (max-width: 640px) {
+  .project-featured {
+    padding: var(--space-md);
+  }
 }
 
 
@@ -458,13 +521,8 @@ pre code {
   margin-bottom: 0.4rem;
 }
 
-.project-card-title a {
-  color: var(--color-text);
-}
-
-.project-card-title a:hover {
-  color: var(--color-accent);
-}
+.project-card-title a { color: var(--color-text); }
+.project-card-title a:hover { color: var(--color-accent); }
 
 .project-card-desc {
   font-size: var(--text-sm);
@@ -493,6 +551,105 @@ pre code {
 .project-visit-link:hover {
   background: var(--color-accent);
   color: #fff;
+}
+
+
+/* ==========================================================
+   POST CARDS
+   ========================================================== */
+.post-card {
+  padding: var(--space-md) 0;
+  border-bottom: 1px solid var(--color-border);
+}
+.post-card:last-child { border-bottom: none; }
+
+.post-date {
+  display: block;
+  font-size: var(--text-xs);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--color-text-light);
+  margin-bottom: 0.3rem;
+}
+
+.post-card-title {
+  font-size: var(--text-xl);
+  margin-bottom: 0.4rem;
+}
+.post-card-title a { color: var(--color-text); text-decoration: none; }
+.post-card-title a:hover { color: var(--color-accent); }
+
+.post-card-excerpt {
+  color: var(--color-text-muted);
+  font-size: var(--text-sm);
+  margin-bottom: 0;
+  line-height: 1.6;
+}
+
+.view-all {
+  display: inline-block;
+  margin-top: var(--space-md);
+  font-size: var(--text-sm);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+
+/* ==========================================================
+   WORK WITH ME — Clear call to action
+   ========================================================== */
+.work-with-me {
+  padding: var(--space-xl) 0;
+  text-align: center;
+  border-top: 1px solid var(--color-border);
+}
+
+.work-with-me-title {
+  font-size: var(--text-2xl);
+  margin-bottom: var(--space-xs);
+}
+
+.work-with-me-desc {
+  font-size: var(--text-base);
+  color: var(--color-text-muted);
+  max-width: 30rem;
+  margin: 0 auto var(--space-md);
+  line-height: 1.6;
+}
+
+.work-with-me-links {
+  display: flex;
+  gap: var(--space-md);
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.cta-button {
+  display: inline-block;
+  font-size: var(--text-sm);
+  font-weight: 600;
+  color: #fff;
+  background: var(--color-accent);
+  padding: 0.7rem 1.8rem;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: background var(--transition);
+}
+.cta-button:hover {
+  background: var(--color-accent-hover);
+  color: #fff;
+}
+
+.cta-link {
+  font-size: var(--text-sm);
+  font-weight: 600;
+  color: var(--color-text-muted);
+}
+.cta-link:hover {
+  color: var(--color-accent);
 }
 
 
@@ -533,20 +690,13 @@ pre code {
   border: 1px solid var(--color-border);
 }
 
-/* Post body — the actual article content */
 .post-body, .page-body {
   padding-bottom: var(--space-xl);
 }
 
-.post-body h2, .page-body h2 {
-  margin-top: var(--space-lg);
-}
+.post-body h2, .page-body h2 { margin-top: var(--space-lg); }
+.post-body h3, .page-body h3 { margin-top: var(--space-md); }
 
-.post-body h3, .page-body h3 {
-  margin-top: var(--space-md);
-}
-
-/* Post navigation (prev/next) */
 .post-footer {
   border-top: 1px solid var(--color-border);
   padding: var(--space-lg) var(--space-md);
@@ -591,7 +741,7 @@ pre code {
 
 
 /* ==========================================================
-   POST LIST PAGE (/posts/)
+   POST LIST PAGE
    ========================================================== */
 .posts-list {
   list-style: none;
@@ -605,10 +755,7 @@ pre code {
   gap: var(--space-md);
   align-items: baseline;
 }
-
-.posts-list li:last-child {
-  border-bottom: none;
-}
+.posts-list li:last-child { border-bottom: none; }
 
 .posts-list time {
   font-size: var(--text-xs);
@@ -623,10 +770,7 @@ pre code {
   font-size: var(--text-lg);
   color: var(--color-text);
 }
-
-.posts-list a:hover {
-  color: var(--color-accent);
-}
+.posts-list a:hover { color: var(--color-accent); }
 
 
 /* ==========================================================
@@ -664,39 +808,17 @@ pre code {
   text-transform: uppercase;
   letter-spacing: 0.04em;
 }
-
-.footer-links a:hover {
-  color: var(--color-accent);
-}
+.footer-links a:hover { color: var(--color-accent); }
 
 
 /* ==========================================================
    RESPONSIVE
    ========================================================== */
 @media (max-width: 640px) {
-  .post-title, .page-title {
-    font-size: var(--text-2xl);
-  }
-
-  .post-nav {
-    flex-direction: column;
-  }
-
-  .post-nav-link {
-    max-width: 100%;
-  }
-
-  .post-nav-next {
-    text-align: left;
-  }
-
-  .posts-list li {
-    flex-direction: column;
-    gap: 0.2rem;
-  }
-
-  .site-footer-inner {
-    flex-direction: column;
-    text-align: center;
-  }
+  .post-title, .page-title { font-size: var(--text-2xl); }
+  .post-nav { flex-direction: column; }
+  .post-nav-link { max-width: 100%; }
+  .post-nav-next { text-align: left; }
+  .posts-list li { flex-direction: column; gap: 0.2rem; }
+  .site-footer-inner { flex-direction: column; text-align: center; }
 }

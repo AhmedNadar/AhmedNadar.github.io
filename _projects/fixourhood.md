@@ -3,6 +3,7 @@ layout: project
 title: FixOurHood
 description: "Report city issues in Toronto. Snap a photo, AI writes the report, city gets notified."
 link: https://fixourhood.ca
+featured: true
 ---
 
 FixOurHood makes it dead simple for Toronto residents to report infrastructure problems — potholes, illegal parking, broken streetlights, graffiti, abandoned vehicles — and get them in front of the right people.
