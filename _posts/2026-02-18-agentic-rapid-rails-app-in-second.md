@@ -56,4 +56,3 @@ Meet Rapidfy 🚀
 
 ![Rapidfy]({{ site.url }}/assets/images/posts/rapidfy_templates.png)
 ![Rapidfy]({{ site.url }}/assets/images/posts/rapidfy_dashboard.png)
-

@@ -63,4 +63,3 @@ That's what focused UI components are for. Not to impress other developers. To s
 
 ![Rapidfy]({{ site.url }}/assets/images/posts/not-focused-ui-components.png)
 ![Rapidfy]({{ site.url }}/assets/images/posts/focused-ui-components.png)
-
