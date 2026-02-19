@@ -1,11 +1,11 @@
 ---
 layout: project
 title: RapidRails
-description: "Production ready UI component library for Rails. No React, no complex JS build tools."
+description: "Production ready UI component library for built for Rails developers and the Rails ecosystem."
 link: https://rapidrails.cc
 ---
 
-RapidRails is a production ready UI component library for Rails. Every component I kept rebuilding across client projects, packaged into one library. No React, no complex JS build tools. Components that work inside Rails natively and easily with AI agents as they understand the components structure and how they work better than plain HTML and CSS.
+RapidRails is a production ready UI component library for Rails. Every component I kept rebuilding across client projects, packaged into one library. **No React, no complex JS build tools**. Components that work inside Rails natively and easily with AI agents as they understand the components structure and how they work better than plain HTML and CSS.
 
 ## The Problem
 

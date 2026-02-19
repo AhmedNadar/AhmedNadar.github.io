@@ -1,7 +1,7 @@
 ---
 layout: project
 title: FixOurHood
-description: "Civic issue reporting for Toronto neighborhoods. Any resident can report any issue in 10 seconds."
+description: "Spot an issue, snap a photo, AI writes the report, city gets notified."
 link: https://fixourhood.ca
 featured: true
 ---
@@ -10,7 +10,7 @@ FixOurHood is a civic issue reporting tool for Toronto neighborhoods. Any reside
 
 ## The Problem
 
-Toronto's 311 system handles 600+ service types but costs the city $11 to $16 per phone call, and fewer than 20% of residents use the app. The existing app assumes you already know how city departments work, which category your issue falls under, and how to write a formal complaint. Most people notice problems every day and never report them because it is too annoying.
+Toronto's 311 system handles 600+ service types but costs the city **$11 to $16 per phone call**, and fewer than 20% of residents use the app. The existing app assumes you already know how city departments work, which category your issue falls under, and how to write a formal complaint. Most people notice problems every day and never report them because it is too annoying.
 
 ## How It Works
 
