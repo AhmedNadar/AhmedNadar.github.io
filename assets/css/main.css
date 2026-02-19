@@ -18,9 +18,9 @@
   --color-code-bg: #2a2522;
   --color-code-text: #ede5dc;
 
-  --gradient-blush: #e8a090;
-  --gradient-peach: #f2c8b8;
-  --gradient-cream: #faf7f4;
+  --gradient-blush: #4b180c;
+  --gradient-peach: #cb6049;
+  --gradient-cream: #ffb1a0;
 
   --font-serif: 'Playfair Display', Georgia, serif;
   --font-sans: 'DM Sans', -apple-system, sans-serif;
@@ -151,9 +151,9 @@ pre code { background: none; padding: 0; font-size: 0.86rem; color: inherit; }
   /* The warm blush gradient — bold and visible */
   background: linear-gradient(
     160deg,
-    #d4796a 0%,
-    var(--gradient-blush) 30%,
-    var(--gradient-peach) 60%,
+    #702514 0%,
+    var(--gradient-blush) 0%,
+    var(--gradient-peach) 70%,
     var(--gradient-cream) 100%
   );
   /* Exit: slides up and fades */
@@ -174,7 +174,7 @@ pre code { background: none; padding: 0; font-size: 0.86rem; color: inherit; }
   font-family: var(--font-serif);
   font-size: clamp(2.8rem, 7vw, 5.5rem);
   font-weight: 700;
-  color: var(--color-text);
+  color: var(--color-bg);
   letter-spacing: -0.025em;
   line-height: 1.05;
   margin-bottom: 1rem;
@@ -183,7 +183,7 @@ pre code { background: none; padding: 0; font-size: 0.86rem; color: inherit; }
 .splash-role {
   font-family: var(--font-mono);
   font-size: var(--text-sm);
-  color: var(--color-text-muted);
+  color: var(--color-bg);
   letter-spacing: 0.08em;
   text-transform: uppercase;
   /* Staggered: appears after name */

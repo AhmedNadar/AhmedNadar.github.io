@@ -1,11 +1,11 @@
 ---
 layout: project
 title: ShipIt.day
-description: "Accountability tool for builders. Connect GitHub, track progress publicly."
+description: "Accountability tool for builders. Track your progress publicly and stay honest about what you are shipping."
 link: https://shipit.day
 ---
 
-ShipIt.day started as a tool I built for myself. I wanted a simple way to track what I was actually shipping — not what I planned to ship, not what I hoped to ship, but what I committed to Git.
+ShipIt.day is an accountability tool for builders. Connect your GitHub, track your progress publicly, and stay honest about what you are actually shipping. Share notes with your team, keep yourself accountable, and get feedback on your work.
 
 ## How It Works
 
@@ -17,4 +17,4 @@ Private todo lists are where ambition goes to die. When other builders can see y
 
 ## Built For Builders
 
-If you ship software, create content, or build products — and you want an honest mirror for your work habits — ShipIt.day is for you.
+If you ship software, create content, or build products and you want an honest mirror for your work habits, ShipIt.day is for you.
