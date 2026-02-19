@@ -107,6 +107,59 @@
         document.body.classList.toggle('nav-open');
       });
     }
+
+    /* --------------------------------------------------
+       LIGHTBOX — Click any post/page image to enlarge
+       -------------------------------------------------- */
+    var images = document.querySelectorAll('.post-body img, .page-body img, .project-body img');
+    if (images.length) {
+      var overlay = document.createElement('div');
+      overlay.className = 'lightbox-overlay';
+      overlay.innerHTML = '<button class="lightbox-close" aria-label="Close">&times;</button><img class="lightbox-image" src="" alt="">';
+      document.body.appendChild(overlay);
+
+      var lbImage = overlay.querySelector('.lightbox-image');
+      var lbClose = overlay.querySelector('.lightbox-close');
+
+      function openLightbox(src, alt) {
+        lbImage.src = src;
+        lbImage.alt = alt || '';
+        overlay.style.display = 'flex';
+        document.body.style.overflow = 'hidden';
+        requestAnimationFrame(function() {
+          overlay.classList.add('is-active');
+        });
+      }
+
+      function closeLightbox() {
+        overlay.classList.remove('is-active');
+        document.body.style.overflow = '';
+        setTimeout(function() {
+          overlay.style.display = 'none';
+          lbImage.src = '';
+        }, 250);
+      }
+
+      images.forEach(function(img) {
+        img.addEventListener('click', function() {
+          openLightbox(img.src, img.alt);
+        });
+      });
+
+      overlay.addEventListener('click', function(e) {
+        if (e.target !== lbImage) closeLightbox();
+      });
+
+      lbClose.addEventListener('click', closeLightbox);
+
+      document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && overlay.classList.contains('is-active')) {
+          closeLightbox();
+        }
+      });
+
+      overlay.style.display = 'none';
+    }
   })();
   </script>
 

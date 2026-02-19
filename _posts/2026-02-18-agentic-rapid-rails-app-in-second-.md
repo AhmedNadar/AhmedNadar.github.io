@@ -53,3 +53,6 @@ If you want to see what 32 Rails native components look like, start here rapidra
 And if you want to follow along as Rapidfy gets better, I'll be sharing demos and progress right here.
 
 Meet Rapidfy 🚀
+
+![Rapidfy]({{ site.url }}/assets/images/posts/rapidfy_templates.png)
+![Rapidfy]({{ site.url }}/assets/images/posts/rapidfy_dashboard.png)
