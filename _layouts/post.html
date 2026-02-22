@@ -8,8 +8,8 @@ layout: default
       {{ page.date | date: "%B %-d, %Y" }}
     </time>
     <h1 class="post-title">{{ page.title }}</h1>
-    {% if page.description %}
-    <p class="post-description">{{ page.description }}</p>
+    {% if page.series %}
+    <p class="post-series">Part {{ page.series_part }} of "{{ page.series }}"</p>
     {% endif %}
     {% if page.tags.size > 0 %}
     <div class="post-tags">
@@ -27,6 +27,8 @@ layout: default
   <div class="container-narrow">
     {% include post-endnote.html %}
   </div>
+
+  {% include post-comments.html %}
 
   <footer class="post-footer container-narrow">
     <div class="post-nav">

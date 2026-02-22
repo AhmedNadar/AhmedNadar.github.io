@@ -1,0 +1,96 @@
+<!-- Display existing comments -->
+{% assign slug = page.url | slugify %}
+{% assign comments = site.data.comments[slug] %}
+{% if comments %}
+<section class="post-comments container-narrow">
+  <hr class="comment-form-divider">
+  <h2>Comments</h2>
+  {% assign sorted = comments | sort %}
+  {% for comment in sorted %}
+  <div class="comment">
+    <div class="comment-meta">
+      <strong>{{ comment[1].name }}</strong>
+      <time>{{ comment[1].date | date: "%B %-d, %Y" }}</time>
+    </div>
+    <div class="comment-body">{{ comment[1].body | markdownify }}</div>
+  </div>
+  {% endfor %}
+</section>
+{% endif %}
+<!-- Comment form -->
+<section class="comment-form-section container-narrow">
+  <hr class="comment-form-divider">
+  <h2>{% if comments %}Leave a comment{% else %}Be the first to comment{% endif %}</h2>
+
+  <form id="comment-form" class="contact-form" novalidate>
+    <input type="hidden" name="post_slug" value="{{ page.url | slugify }}">
+
+    <div class="form-group">
+      <label for="comment-name">Name</label>
+      <input type="text" id="comment-name" name="name" required autocomplete="name" placeholder="Your name">
+    </div>
+
+    <div class="form-group">
+      <label for="comment-email">Email</label>
+      <input type="email" id="comment-email" name="email" required autocomplete="email" placeholder="you@example.com">
+      <small class="form-hint">Not published. Used for reply notifications only.</small>
+    </div>
+
+    <div class="form-group">
+      <label for="comment-body">Comment</label>
+      <textarea id="comment-body" name="body" rows="4" required placeholder="Share your thoughts..."></textarea>
+    </div>
+
+    <button type="submit" class="cta-button contact-submit">Post comment</button>
+  </form>
+
+  <div id="comment-success" class="contact-feedback" style="display: none;">
+    <p><strong>Thank you!</strong> Your comment will appear shortly, usually within a couple of minutes.</p>
+  </div>
+
+  <div id="comment-error" class="contact-feedback contact-feedback-error" style="display: none;">
+    <p>Something went wrong. Try again or <a href="/contact/">contact me directly</a>.</p>
+  </div>
+</section>
+
+<script>
+(function() {
+  'use strict';
+
+  var form = document.getElementById('comment-form');
+  var success = document.getElementById('comment-success');
+  var error = document.getElementById('comment-error');
+  var submit = form.querySelector('.contact-submit');
+  var ENDPOINT = 'https://fixourhood.ca/api/v1/comments';
+
+  form.addEventListener('submit', function(e) {
+    e.preventDefault();
+    error.style.display = 'none';
+    submit.disabled = true;
+    submit.textContent = 'Posting...';
+
+    var data = {
+      post_slug: form.post_slug.value,
+      name: form.name.value.trim(),
+      email: form.email.value.trim(),
+      body: form.body.value.trim()
+    };
+
+    fetch(ENDPOINT, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(data)
+    })
+    .then(function(res) {
+      if (!res.ok) throw new Error(res.status);
+      form.style.display = 'none';
+      success.style.display = 'block';
+    })
+    .catch(function() {
+      error.style.display = 'block';
+      submit.disabled = false;
+      submit.textContent = 'Post comment';
+    });
+  });
+})();
+</script>
