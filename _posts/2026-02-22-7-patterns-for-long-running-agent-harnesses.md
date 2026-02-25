@@ -166,7 +166,7 @@ fi
 
 Note the regex: `[1-9][0-9]* (failures|errors)`. It matches "1 failures", "3 errors", "12 failures" — but *not* "0 failures". That distinction matters. `grep "failures"` would match the success line too.
 
-**The failure that made me build this:** Iteration 4 introduced a subtle bug in a model validation. The tests for that specific model still passed, but it broke a different controller that depended on the validation behavior. Iterations 5, 6, and 7 kept building on top of the broken foundation. Each one added code that *assumed* the validation worked correctly. By the time I noticed — three iterations later — I had to revert three commits and redo the work. Three iterations of wasted LLM calls, wasted tokens, wasted time.
+While building this harness, I hit a wall where iteration 4 introduced a subtle bug in a model validation. The tests for that specific model still passed, but it broke a different controller that depended on the validation behavior. Iterations 5, 6, and 7 kept building on top of the broken foundation. Each one added code that *assumed* the validation worked correctly. By the time I noticed — three iterations later — I had to revert three commits and redo the work. Three iterations of wasted LLM calls, wasted tokens, wasted time. This was a failure mode that could have been caught much sooner if I had run the full test suite before each iteration.
 
 A single `bin/rails test` before each iteration would have caught it immediately. The cost: 15 seconds of test runtime. The savings: three wasted iterations.
 
@@ -174,7 +174,7 @@ A single `bin/rails test` before each iteration would have caught it immediately
 
 **The pattern:** Minimize token overhead so the agent has more context for actual reasoning.
 
-**What I do:** The harness pre-computes test results and route health *outside* the LLM call, then injects a compact summary into the prompt:
+The harness pre-computes test results and route health *outside* the LLM call, then injects a compact summary into the prompt:
 
 ```bash
 build_prompt() {
@@ -208,24 +208,22 @@ OK   /apps -- 200 (12637B)
 OK   /users/sign_in -- 200 (14404B)
 ```
 
-That's about 200 tokens. The same information from the agent running tests itself would be 50-100 lines of raw test output — easily 2,000+ tokens of noise that pushes useful context out.
+That's about 200 tokens. The same information from the agent running tests itself would be 50-100 lines of raw test output, easily 2,000+ tokens of noise that pushes useful context out.
 
-**The key instruction:** Notice the line "pre-computed, do not re-run unless you change code." Without this, the agent will run the test suite itself anyway — burning tokens on raw output that the harness already summarized. One line of instruction saves thousands of tokens per iteration. Multiply that by 15 iterations and you've saved a significant chunk of your context budget.
-
-More on context window economics in [Part 3](/2026/02/24/context-window-economics-for-ai-agents).
+The key instruction is the line "pre-computed, do not re-run unless you change code." Without it, the agent will run the test suite itself anyway, burning tokens on raw output that the harness already summarized. One line of instruction saves thousands of tokens per iteration. Multiply that by 15 iterations and you've saved a significant chunk of your context budget.
 
 ## What I learned
 
-The first four patterns (checklist, progress file, one-feature-per-session, git as memory) are table stakes. You need them, but they're not what makes or breaks your agent. They're just good engineering habits.
+The first four patterns (checklist, progress file, one-feature-per-session, git as memory) are table stakes. You need them, but they're not what makes or breaks your agent. They're just good habits.
 
 The last three are where the real value is:
 
 **Startup health check** catches regressions before they compound. Without it, one broken iteration becomes three broken iterations before anyone notices. The fix is five lines of bash.
 
-**E2E verification** catches the failures that unit tests miss. The gap between "tests pass" and "app works" is real, and agents live in that gap. A script that curls your routes and checks for error pages costs an afternoon to build and catches bugs that would otherwise ship.
+**E2E verification** catches the failures that unit tests miss. The gap between "tests pass" and "app works" is real, and agents live in that gap without a clue. A script that curls your routes and checks for error pages costs an afternoon to build and catches bugs that would otherwise ship.
 
-**Prompt efficiency** is the least obvious but most impactful. Every token you spend on overhead is a token the agent can't use for thinking. Pre-compute what you can. Inject summaries, not raw output. Tell the agent to trust the summary. The agent that ships the best code isn't the one with the most tools — it's the one with the most tokens left for reasoning.
+**Prompt efficiency** is the least obvious but most impactful. Every token you spend on overhead is a token the agent can't use for thinking. Pre-compute what you can. Inject summaries, not raw output. Tell the agent to trust the summary. The agent that ships the best code isn't the one with the most tools, it's the one with the most tokens left for reasoning.
 
 The easy patterns give you a working agent. The hard patterns give you a reliable one. The difference shows up when the agent has been running for 12 iterations and you check what it shipped.
 
-*Next in the series: [Part 2 — Your agent shouldn't be its own QA: Where verification actually belongs](/2026/02/23/where-verification-belongs-in-agent-harnesses)*
+*Next in the series: Part 2 — Your agent shouldn't be its own QA: Where verification actually belongs*
