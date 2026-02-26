@@ -24,6 +24,9 @@
 
   <form id="comment-form" class="contact-form" novalidate>
     <input type="hidden" name="post_slug" value="{{ page.url | slugify }}">
+    <div style="position:absolute;left:-9999px" aria-hidden="true">
+      <input type="text" name="website" tabindex="-1" autocomplete="off">
+    </div>
 
     <div class="form-group">
       <label for="comment-name">Name</label>
@@ -73,7 +76,8 @@
       post_slug: form.post_slug.value,
       name: form.name.value.trim(),
       email: form.email.value.trim(),
-      body: form.body.value.trim()
+      body: form.body.value.trim(),
+      website: form.website.value
     };
 
     fetch(ENDPOINT, {
