@@ -14,7 +14,7 @@ This harness decides what the agent sees, when it stops, what gets committed, an
 
 I build Rapidfy, an agentic system that generates full Rails applications from a spec. The agent (an LLM with tools) writes the code. The harness (a bash loop) orchestrates: prepare the prompt, invoke the agent, check if progress was made, loop or stop.
 
-Anthropic published a guide called ["Effective Harnesses for Long-Running Agents"](https://docs.anthropic.com/en/docs/build-with-claude/agentic) that distills this into 7 key patterns. I applied them to my harness and found that the first four are easy — most teams nail them naturally. The last three are where agents quietly fail. Here's what each pattern looks like in practice, and what goes wrong when you skip them.
+Anthropic published a guide called ["Effective Harnesses for Long-Running Agents"](https://docs.anthropic.com/en/docs/build-with-claude/agentic) that distills this into 7 key patterns. I applied them to my harness and found that the first four are easy, most developers nail them naturally. The last three are where agents quietly fail. Here's what each pattern looks like in practice, and what goes wrong when you skip them.
 
 ## Pattern 1: Feature checklist (JSON)
 
@@ -48,7 +48,7 @@ Without it the agent builds features in whatever order it feels like. It skips h
 
 **The pattern:** Keep a persistent record of what's done on disk, not in conversation history.
 
-The harness maintains a markdown file with checkboxes. Each iteration, the agent finds the first unchecked task and works on it:
+The harness maintains a markdown file with checkboxes. In each iteration the agent finds the first unchecked task and works on it and checks it off.
 
 ```markdown
 - [x] FEAT-001: User authentication
@@ -57,9 +57,7 @@ The harness maintains a markdown file with checkboxes. Each iteration, the agent
 - [ ] FEAT-004: CRUD for deals
 ```
 
-Every iteration starts with a fresh context window. The agent doesn't remember what it did last time. Without a file on disk, it has no idea what's been built and what hasn't. It will re-implement features that already exist, or skip features it thinks it already did.
-
-The progress file is the agent's memory between sessions. Cheap to implement, critical to have.
+Every iteration starts with a fresh context window. The agent doesn't remember what it did last time. Without a file on disk, it has no idea what's been built and what hasn't. It will re-implement features that already exist, or skip features it thinks it already did. That's why the progress file is the agent's memory between sessions. Cheap to implement, critical to have.
 
 ## Pattern 3: One feature per session
 
@@ -85,7 +83,7 @@ The circuit breaker forces the agent to either ship something or stop trying. Th
 
 **The pattern:** Each task = one commit. The git log becomes a readable history of what the agent built.
 
-After each invocation, the harness checks `git rev-parse HEAD` before and after each invocation. If HEAD changed, a commit happened, which means progress. The commit messages follow a convention:
+The harness checks `git rev-parse HEAD` before and after each invocation. If HEAD changed, a commit happened, which means progress. The commit messages follow a convention:
 
 ```
 [FEAT-006] Dashboard CRM stats, seed data, 7 system tests
@@ -93,7 +91,7 @@ After each invocation, the harness checks `git rev-parse HEAD` before and after 
 [FEAT-004] Deal model + controller + views, pipeline stages, 20 tests
 ```
 
-Incrementally committing each task to Git isn't just a log, it's a safety net. If the agent breaks something on iteration 8, you can `git diff HEAD~1` to see exactly what changed. You can revert one commit without losing everything. Without per-task commits, you get one giant diff at the end and no way to isolate what broke what.
+Incrementally committing each task to Git isn't just a log, it's a safety net for when the agent breaks something. If the agent breaks something on iteration 8, you can `git diff HEAD~1` to see exactly what changed. You can revert one commit without losing everything. Without per-task commits, you get one giant diff at the end and no way to isolate what broke what.
 
 ---
 
@@ -105,47 +103,11 @@ Those first four patterns are the easy ones. Most of us get them right because t
 
 **The pattern:** Not just unit tests, does the app actually work when you open it in a browser.
 
-A script that discovers every GET route in the app, starts a real Rails server, curls each route, and checks the responses:
+A route returning HTTP 200 with a Rails error page in the body was a common failure mode for my agent. All unit tests passed. The agent marked the feature as done. But the page said "We're sorry, but something went wrong", wrapped in a valid 200 response that the agent never visually checked.
 
-```bash
-# Discover routes programmatically
-ROUTES=$(bin/rails runner "
-  Rails.application.routes.routes.select { |r|
-    r.verb.to_s.include?('GET')
-  }.map { |r|
-    r.path.spec.to_s.gsub('(.:format)', '')
-  }.reject { |p|
-    p.include?(':') || p.start_with?('/rails/')
-  }.uniq.sort.each { |p| puts p }
-" 2>/dev/null)
+HTTP 200 does not mean "correct." The gap between "tests pass" and "app works" is where agents silently fail. Closing that gap requires a manual verification step outside the agent's loop that starts a real server, hits every route, and checks the responses for actual content, not just status codes.
 
-# Start a real server on a random port
-PORT=$((RANDOM % 1000 + 9000))
-bin/rails server -p "$PORT" > /dev/null 2>&1 &
-
-# Check each route
-for route in $ROUTES; do
-    STATUS=$(curl -s -o /tmp/body -w '%{http_code}' \
-             "http://localhost:$PORT$route")
-    BODY_SIZE=$(wc -c < /tmp/body | tr -d ' ')
-
-    if [ "$STATUS" = "200" ]; then
-        # A 200 with error page content is a lie
-        if grep -qiE "(Internal Server Error|something went wrong)" \
-           /tmp/body; then
-            echo "FAIL $route -- 200 but error page content"
-        elif [ "$BODY_SIZE" -lt 100 ]; then
-            echo "FAIL $route -- 200 but body too small (${BODY_SIZE}B)"
-        fi
-    fi
-done
-```
-
-The failure that made me build this was a route returning HTTP 200 with a Rails error page in the body. The text said "We're sorry, but something went wrong." All unit tests passed. The agent marked the feature as done. When I opened the browser, the page was obviously broken. But the agent never opened a browser — it just saw "200 OK" and moved on.
-
-The key insight: HTTP 200 does not mean "correct." A route can return 200 with a blank page, an error message, or a missing template. Unit tests mock the request cycle — they don't start a real server. The gap between "tests pass" and "app works" is where agents silently fail.
-
-Why not MCP Puppeteer instead? In the Anthropic article, they recommend giving agents browser access via MCP for visual verification. I tried it and found that every MCP server you load costs context before you even call a tool, tool schemas, protocol overhead, capability definitions. These costs are always there, every iteration, whether you use the tools or not. Then Puppeteer adds screenshots on top. Each screenshot costs roughly 3,000-6,000 tokens depending on page size. Check five routes per iteration across ten iterations and you've spent 150,000-300,000 tokens on pictures. Meanwhile, a 10-line text summary of route health gives you the same signal for about 200 tokens. That's a 15-30x difference per check. If you care about your agent's context window, and you should, most MCP servers are not worth loading. Every tool definition you add is a tool the agent has room to think about but less room to think *with*.
+I built a route verification script that does exactly this, and tried Anthropic's MCP Puppeteer approach as an alternative. The tradeoffs between the two are more interesting than the script itself. [Full implementation and comparison in Part 2](/where-verification-actually-belongs-in-agent-harnesses).
 
 ## Pattern 6: Startup health check
 
@@ -174,56 +136,16 @@ A single `bin/rails test` before each iteration would have caught it immediately
 
 **The pattern:** Minimize token overhead so the agent has more context for actual reasoning.
 
-The harness pre-computes test results and route health *outside* the LLM call, then injects a compact summary into the prompt:
+When building this harness, I learned that pre-computing what you can outside the LLM call, then injecting compact summaries into the prompt is the most impactful pattern. Test results, route health, linting output — anything that can be summarized in a few lines of text shouldn't be produced by the agent itself. Raw test output is 50-100 lines. A summary is 3-15 lines. That difference compounds across every iteration.
 
-```bash
-build_prompt() {
-    local prompt
-    prompt=$(cat "$PROMPT_FILE")
-
-    # Run tests outside, inject summary as text
-    ./test-summary.sh > /dev/null 2>&1 || true
-    if [ -f ".test-summary" ]; then
-        prompt="${prompt}
-
-## Current Test State (pre-computed, do not re-run unless you change code)
-$(cat ".test-summary")"
-    fi
-
-    echo "$prompt"
-}
-```
-
-The injected summary looks like this:
-
-```
-## Test Summary (14:23:07)
-34 runs, 84 assertions, 0 failures, 0 errors, 0 skips
-
-## Route Verification (14:23:13)
-10 passed, 0 failed (of 10 routes)
-
-OK   / -- 200 (49750B)
-OK   /apps -- 200 (12637B)
-OK   /users/sign_in -- 200 (14404B)
-```
-
-That's about 200 tokens. The same information from the agent running tests itself would be 50-100 lines of raw test output, easily 2,000+ tokens of noise that pushes useful context out.
-
-The key instruction is the line "pre-computed, do not re-run unless you change code." Without it, the agent will run the test suite itself anyway, burning tokens on raw output that the harness already summarized. One line of instruction saves thousands of tokens per iteration. Multiply that by 15 iterations and you've saved a significant chunk of your context budget.
+This turned out to be the least obvious pattern but the most impactful. [Full implementation and token math in Part 3](/context-window-economics-for-ai-agents).
 
 ## What I learned
 
 The first four patterns (checklist, progress file, one-feature-per-session, git as memory) are table stakes. You need them, but they're not what makes or breaks your agent. They're just good habits.
 
-The last three are where the real value is:
+The last three are where the real value is. **Startup health check** catches regressions before they compound — five lines of bash that save entire iterations of wasted work. **E2E verification** catches the failures that unit tests miss. **Prompt efficiency** determines how long your agent stays useful before it starts forgetting its instructions.
 
-**Startup health check** catches regressions before they compound. Without it, one broken iteration becomes three broken iterations before anyone notices. The fix is five lines of bash.
+The easy patterns give you a working agent. The hard patterns give you a reliable one. Parts 2 and 3 dig into the two hardest: verification and context economics.
 
-**E2E verification** catches the failures that unit tests miss. The gap between "tests pass" and "app works" is real, and agents live in that gap without a clue. A script that curls your routes and checks for error pages costs an afternoon to build and catches bugs that would otherwise ship.
-
-**Prompt efficiency** is the least obvious but most impactful. Every token you spend on overhead is a token the agent can't use for thinking. Pre-compute what you can. Inject summaries, not raw output. Tell the agent to trust the summary. The agent that ships the best code isn't the one with the most tools, it's the one with the most tokens left for reasoning.
-
-The easy patterns give you a working agent. The hard patterns give you a reliable one. The difference shows up when the agent has been running for 12 iterations and you check what it shipped.
-
-*Next in the series: Part 2 — Your agent shouldn't be its own QA: Where verification actually belongs*
+***Next**: [Part 2 — Where verification actually belongs in agent harnesses](/where-verification-actually-belongs-in-agent-harnesses)*
