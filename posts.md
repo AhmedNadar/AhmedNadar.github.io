@@ -8,7 +8,7 @@ description: "Posts about Rails, building products, and shipping code."
 <ul class="posts-list">
   {% for post in site.posts %}
   <li>
-    <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%b %Y" }}</time>
+    <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%b %-d, %Y" }}</time>
     <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
   </li>
   {% endfor %}
