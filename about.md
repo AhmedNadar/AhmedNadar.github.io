@@ -17,7 +17,7 @@ Every product on this page was built this way. From first conversation to live u
 
 ## What I'm Building
 
-**[FixOurHood](https://fixourhood.ca)** is a civic issue reporting tool for Toronto neighborhoods. Any resident can report any issue in 10 seconds. I talked to residents, understood what was frustrating about reporting local issues, designed the flow, and built the whole thing with Rails and AI agents. It is live and serving real users.
+**[SolveTO](https://solveto.ca)** is a civic accountability platform for Toronto. Any resident can report any issue in 10 seconds. I talked to residents, understood what was frustrating about reporting local issues, designed the flow, and built the whole thing with Rails and AI agents. It is live and serving real users.
 
 **[RapidRails](https://rapidrails.cc)** is a production ready UI component library for Rails. Every component I kept rebuilding across client projects, packaged into one library. No React, no complex JS build tools. Components that work inside Rails natively and easily with AI agents as they understand the components structure and how they work better than plain html and css.
 
