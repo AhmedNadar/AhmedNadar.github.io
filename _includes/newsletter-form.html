@@ -1,0 +1,59 @@
+<form id="newsletter-form" class="newsletter-form" novalidate>
+  <div style="position:absolute;left:-9999px" aria-hidden="true">
+    <input type="text" name="website" tabindex="-1" autocomplete="off">
+  </div>
+  <div class="newsletter-input-row">
+    <input type="email" id="newsletter-email" name="email" required autocomplete="email" placeholder="you@example.com">
+    <button type="submit" class="cta-button newsletter-submit">Subscribe</button>
+  </div>
+</form>
+
+<div id="newsletter-success" class="contact-feedback" style="display: none;">
+  <p>Check your email to confirm your subscription.</p>
+</div>
+
+<div id="newsletter-error" class="contact-feedback contact-feedback-error" style="display: none;">
+  <p>Something went wrong. Try again or <a href="/contact/">contact me</a>.</p>
+</div>
+
+<script>
+(function() {
+  'use strict';
+
+  var form = document.getElementById('newsletter-form');
+  if (!form) return;
+
+  var success = document.getElementById('newsletter-success');
+  var error = document.getElementById('newsletter-error');
+  var submit = form.querySelector('.newsletter-submit');
+  var ENDPOINT = 'https://solveto.ca/api/v1/newsletter/ahmednadar/subscribe';
+
+  form.addEventListener('submit', function(e) {
+    e.preventDefault();
+    error.style.display = 'none';
+    submit.disabled = true;
+    submit.textContent = 'Subscribing...';
+
+    var data = {
+      email: form.email.value.trim(),
+      website: form.website.value
+    };
+
+    fetch(ENDPOINT, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(data)
+    })
+    .then(function(res) {
+      if (!res.ok) throw new Error(res.status);
+      form.style.display = 'none';
+      success.style.display = 'block';
+    })
+    .catch(function() {
+      error.style.display = 'block';
+      submit.disabled = false;
+      submit.textContent = 'Subscribe';
+    });
+  });
+})();
+</script>

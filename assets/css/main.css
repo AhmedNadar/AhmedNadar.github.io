@@ -913,6 +913,122 @@ body:not(.has-splash) .site-header {
 }
 
 /* ==========================================================
+   NEWSLETTER
+   ========================================================== */
+.newsletter-section {
+  padding: var(--space-xl) 0;
+  text-align: center;
+  border-top: 1px solid var(--color-border);
+}
+
+.newsletter-desc {
+  color: var(--color-text-muted);
+  max-width: 28rem;
+  margin: 0 auto var(--space-md);
+}
+
+.newsletter-form {
+  max-width: 26rem;
+  margin: 0 auto;
+}
+
+.newsletter-input-row {
+  display: flex;
+  gap: var(--space-xs);
+}
+
+.newsletter-input-row input[type="email"] {
+  flex: 1;
+  font-family: var(--font-sans);
+  font-size: var(--text-base);
+  color: var(--color-text);
+  background: var(--color-bg);
+  border: 1.5px solid var(--color-border);
+  border-radius: 50px;
+  padding: 0.7rem 1.2rem;
+  transition: border-color var(--transition);
+}
+
+.newsletter-input-row input[type="email"]:focus {
+  outline: none;
+  border-color: var(--color-accent);
+}
+
+.newsletter-input-row input[type="email"]::placeholder {
+  color: var(--color-text-light);
+}
+
+.newsletter-submit {
+  cursor: pointer;
+  border: none;
+  font-family: var(--font-sans);
+  white-space: nowrap;
+}
+
+.newsletter-submit:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.endnote-subscribe {
+  margin-top: var(--space-md);
+  padding-top: var(--space-md);
+  border-top: 1px solid var(--color-border);
+}
+
+.endnote-subscribe-label {
+  font-size: var(--text-sm);
+  font-weight: 600;
+  color: var(--color-text);
+  margin-bottom: var(--space-xs);
+}
+
+.endnote-subscribe .newsletter-form {
+  margin: 0;
+}
+
+.endnote-subscribe .contact-feedback {
+  text-align: left;
+}
+
+@media (max-width: 640px) {
+  .newsletter-input-row {
+    flex-direction: column;
+  }
+
+  .newsletter-input-row input[type="email"] {
+    border-radius: 6px;
+  }
+
+  .newsletter-submit {
+    border-radius: 50px;
+  }
+}
+
+.newsletter-flash {
+  position: fixed;
+  bottom: var(--space-md);
+  left: 50%;
+  transform: translateX(-50%) translateY(20px);
+  background: var(--color-text);
+  color: var(--color-bg);
+  padding: 0.8rem 1.5rem;
+  border-radius: 50px;
+  font-size: var(--text-sm);
+  font-weight: 500;
+  z-index: 9999;
+  opacity: 0;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  pointer-events: none;
+}
+
+.newsletter-flash.is-visible {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+
+
+/* ==========================================================
    CONTACT FORM
    ========================================================== */
 .contact-form {
