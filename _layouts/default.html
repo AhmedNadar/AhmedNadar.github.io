@@ -100,6 +100,27 @@
     }
 
     /* --------------------------------------------------
+       NEWSLETTER CONFIRMATION FLASH
+       -------------------------------------------------- */
+    var params = new URLSearchParams(window.location.search);
+    var nlStatus = params.get('newsletter');
+    if (nlStatus === 'confirmed' || nlStatus === 'unsubscribed') {
+      var flash = document.createElement('div');
+      flash.className = 'newsletter-flash';
+      flash.textContent = nlStatus === 'confirmed'
+        ? 'Subscription confirmed. You are all set.'
+        : 'You have been unsubscribed.';
+      document.body.appendChild(flash);
+      setTimeout(function() { flash.classList.add('is-visible'); }, 100);
+      setTimeout(function() {
+        flash.classList.remove('is-visible');
+        setTimeout(function() { flash.remove(); }, 400);
+      }, 4000);
+      // Clean URL
+      history.replaceState(null, '', window.location.pathname);
+    }
+
+    /* --------------------------------------------------
        MOBILE NAV TOGGLE
        -------------------------------------------------- */
     var toggle = document.querySelector('.menu-toggle');
