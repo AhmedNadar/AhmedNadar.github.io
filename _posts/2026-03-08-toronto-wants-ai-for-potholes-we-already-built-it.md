@@ -1,7 +1,7 @@
 ---
 layout: post
-title: "Toronto wants AI for potholes. We already built it."
-date: 2026-03-10
+title: "Toronto wants AI for potholes... I already built it"
+date: 2026-03-08
 description: "The city is exploring AI to fix pothole reporting. SolveTO has been doing it since February."
 tags: [solveto, toronto, ai, civic-tech]
 ---
