@@ -4,6 +4,7 @@ title: "Toronto deserves better than 311"
 date: 2026-03-10
 description: "Reporting a pothole shouldn't take 15 minutes on hold. SolveTO replaces 311 with a 30-second photo-to-report flow that costs the city nothing."
 tags: [solveto, toronto, civic-tech, ai]
+image: /assets/images/posts/og-toronto-deserves-better-than-311.png
 ---
 
 Three months ago I watched a woman on Bloor Street step around the same pothole I reported by email three weeks earlier. She looked at it, shook her head, and kept walking. She's not going to call 311. Nobody is.
