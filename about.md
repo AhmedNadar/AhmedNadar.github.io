@@ -2,33 +2,47 @@
 layout: page
 title: About
 permalink: /about/
-description: "Software developer and product builder in Toronto. I build production apps with Ruby on Rails."
+description: "Toronto-based product builder. I ship Rails apps that solve a specific problem for a specific person. Currently building SolveTO and STL Agent."
 ---
 
-I'm Ahmed, a software developer and product builder based in Toronto. For the last ten years I have been doing the same thing: figuring out what people actually need and turning that into working software. That part has not changed. What changed is how fast I can do it.
+I'm Ahmed. I build Rails apps in Toronto that solve a specific problem for a specific person.
 
-## How I Work
+For ten years I have been doing the same thing: figuring out what a real human actually needs and turning it into working software. The tools changed. The work didn't. What did change is how fast one developer can now ship the thing — and how much that speed reshuffles who gets to build what.
 
-It starts with the problem. I ask questions and keep asking until I understand not just what someone wants built but why they need it. Following by designing the flow, thinking through the architecture, and building it in Rails tools like RapidRails UI components, StimulusJS and Hotwire.
+## What I'm building right now
 
-I use AI agents throughout the build phase. Tools like Claude Code help me write, test, and iterate faster than I could alone. The thinking and product decisions are mine. The implementation moves at a speed that used to require a whole team.
+**[SolveTO](https://solveto.ca)** — civic accountability for Toronto. Snap a photo of a pothole, broken streetlight, or graffiti — AI writes a proper 311-style report, the city and your councillor get notified, the report goes on a public map, and neighbors can vote and verify. **418,000 city assets mapped. All 25 wards integrated. Real residents using it. Five media interviews in the first week.** Built ~90% with AI-assisted development on Rails 8.
 
-Every product on this page was built this way. From first conversation to live users.
+**[STL Agent](/projects/stl-agent/)** — speed-to-lead for GTA contractors. Average GTA contractor takes 42 hours to reply to a quote request. The customer who responds first wins 78% of the time. STL pings the contractor on Telegram in under 60 seconds, AI emails the customer back, and the whole CRM lives inside Telegram so the contractor stays on the roof. Currently booking 5 GTA contractors for white-glove install.
 
-## What I'm Building
+**[RapidRails](https://rapidrails.cc)** — the production-ready UI component library both products are built on. Every component I kept rebuilding across client projects, packaged into a Ruby gem. ViewComponent + Stimulus + Tailwind. No React, no JS build steps.
 
-**[SolveTO](https://solveto.ca)** is a civic accountability platform for Toronto. Any resident can report any issue in 10 seconds. I talked to residents, understood what was frustrating about reporting local issues, designed the flow, and built the whole thing with Rails and AI agents. It is live and serving real users.
+## How I actually work
 
-**[RapidRails](https://rapidrails.cc)** is a production ready UI component library for Rails. Every component I kept rebuilding across client projects, packaged into one library. No React, no complex JS build tools. Components that work inside Rails natively and easily with AI agents as they understand the components structure and how they work better than plain html and css.
+It starts with a real conversation with a real human. I asked Toronto residents what was annoying about reporting issues — most of them had never used 311 because the categories don't match how they think. So SolveTO's photo-first flow exists because that conversation happened first, not because it sounded innovative.
 
-**[ShipIt.day](https://shipit.day)** is an accountability tool for builders. Connect your GitHub, track your progress publicly, and stay honest about what you are actually shipping. Share notes with your team, keep yourself accountable, and get feedback on your work. ~80% AI-assisted.
+I asked plumbers, electricians, and roofers what was killing their conversion rate. The answer was always the same: "I'm on a job, my phone's in the truck, by the time I see the form the customer already booked someone else." So STL Agent runs on Telegram and pings them in seconds — not because Telegram is trendy, but because it's the one app that already lives on a contractor's lock screen.
 
-## What I Believe
+I write code with AI agents — Claude Code, Cursor, agentic workflows — every day. Not to replace thinking. To multiply the output of one person who already understands the problem deeply. The thinking and the product decisions are mine. The implementation moves at a pace that used to require a team of four.
 
-Writing code is not the hard part anymore. Understanding the problem is. Knowing what to build, for whom, and why. That has always been the real skill in software and it is the only one that matters more now, not less.
+Every product on this page was built this way. From first conversation to live users. Numbers above are real.
 
-One developer who understands the problem deeply and uses the right tools can build what used to take a team. I have been doing that for ten years. The tools got better. The work stayed the same.
+## What I believe
 
-## Get in Touch
+Writing code stopped being the bottleneck. Understanding the problem is the only hard part now — and it has always been the only hard part. Knowing what to build, for whom, and why. That hasn't changed in ten years.
 
-Find me on [GitHub](https://github.com/AhmedNadar) or [Twitter](https://twitter.com/ahmednadar). If you have a problem worth solving, I would like to hear about it.
+What changed: a single developer who actually talks to the user can now ship the fix the same week. That is the real edge. Not the AI tooling. Not the framework. The willingness to talk to the person, then build the small specific thing that helps them this Tuesday.
+
+### The same kind of hire as search and social
+
+A generation ago, serious local businesses realized they needed someone who understood **search** and someone who understood **social**. The next recurring hire is whoever makes **AI actually run in the business** — not a strategy deck, but faster follow-up, fewer dropped quotes, and money not walking to whoever answered first.
+
+That is what **[STL Agent](/projects/stl-agent/)** is for contractors: I show up as the **speed-to-lead operator** — embedded in Telegram, accountable, built on Rails — for a handful of GTA trades at a time. Same category of relationship as “our SEO person” or “our IT guy,” but for the moment the customer decides who gets the job.
+
+## Get in touch
+
+If you are a Toronto contractor losing jobs to slow follow-up, start with the **[free Speed-to-Lead Score](/stl-score/)** — 30 seconds, no spam, instant number.
+
+If you have a different problem worth solving — civic, SMB, anything where one developer with Rails + AI can build the right tool — email me at [ahmed@ahmednadar.com](mailto:ahmed@ahmednadar.com). I reply inside an hour, usually less.
+
+Also on [GitHub](https://github.com/AhmedNadar) and [Twitter](https://twitter.com/ahmednadar) — most of my building-in-public happens there.

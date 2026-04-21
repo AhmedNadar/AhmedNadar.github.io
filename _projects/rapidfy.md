@@ -3,7 +3,8 @@ layout: project
 title: Rapidfy
 description: "Describe your app, get a production Rails app in seconds. Not a prototype."
 link: https://rapidfy.dev
-featured: true
+order: 5
+status: "In development"
 ---
 
 Rapidfy is an AI-powered Rails application generator. You describe what you want in plain English, and it builds a complete, deployable Rails app with authentication, database, CRUD, and a production-grade component library included. I designed the agent architecture, built the scaffold pipeline, and wrote the component library it ships with. The whole thing is Rails, built for Rails developers.
@@ -19,7 +20,3 @@ Three paths to a working app. **Pick a template** like CRM, todo, or e-commerce 
 ## What Makes It Different
 
 It is the only AI builder that targets Rails. Generated apps are not prototypes. They have real databases, real authentication, real admin panels, and a tested component library. RapidRailsUI is bundled into every subscription so there are no hidden costs after generation. The agent uses golden templates as scaffolds instead of generating from a blank canvas, which means consistent, production-quality output every time. A built-in knowledge engine learns from every build and feeds proven patterns back into future generations.
-
-## Stack
-
-Ruby on Rails 8, PostgreSQL, Devise, Stripe via Pay, Solid Queue. AI agent built on Anthropic Claude with prompt caching, a constitutional safety layer, and semantic verification. [RapidRails UI components library](https://rapidrails.cc?utm_source=rapidfy&utm_medium=blog) with Tailwind, Turbo, and Stimulus. Deployed with Kamal to Hetzner.

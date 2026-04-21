@@ -1,12 +1,19 @@
 ---
 layout: project
 title: SolveTO
-description: "Spot an issue, snap a photo, AI writes the report, city & councillor get notified."
+description: "Civic accountability for Toronto. 418,000 city assets mapped. AI turns a photo into a real 311 report in 10 seconds."
 link: https://solveto.ca
 featured: true
+order: 1
+status: "Live"
 ---
 
 SolveTO is a civic accountability platform for Toronto. Any resident can report any issue in 10 seconds. I talked to residents, understood what was frustrating about reporting local issues, designed the flow, and built the whole thing with Rails and AI agents. It is live and serving real users.
+
+<figure class="project-showcase project-showcase--single">
+  <img src="{{ '/assets/images/posts/og-toronto-deserves-better-than-311.png' | relative_url }}" alt="SolveTO map of Toronto connecting civic reporting with open data" width="1200" height="630" loading="lazy" decoding="async">
+  <figcaption>Community map, wards, and accountability — built on Toronto open data.</figcaption>
+</figure>
 
 ## The Problem
 
@@ -19,7 +26,3 @@ The workflow is three steps. **Spot** an issue and snap a photo. **Send** it thr
 ## What Makes It Different
 
 Community verification lets neighbors vote on reports, building trust through crowd validation. Toronto's 25 municipal wards are fully integrated. You can view issues by ward, see ward boundaries on the map, and get ward specific statistics. Every report gets detailed resolution tracking with status updates and before/after documentation. A public analytics dashboard tracks councillor performance, SLA compliance, and community engagement across all 25 wards.
-
-## Stack
-
-Ruby on Rails. AI powered photo analysis for automatic issue categorization. Interactive map with ward boundaries. Community voting and verification system. Public accountability dashboard with councillor scoring. Built with AI agents using Claude Code.
