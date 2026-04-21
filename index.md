@@ -3,6 +3,8 @@ layout: home
 title: Home
 ---
 
-Building an **AI-powered Rails agent**, think v0 and Lovable, but for Ruby on Rails. One prompt to a full, production-ready app with RapidRails UI components, Hotwire, and Tailwind. Shipping soon.
+Shipping **[SolveTO](https://solveto.ca)** — a civic accountability platform for Toronto. 418,000 city assets mapped, 25 wards integrated, real residents using it, real councillors being measured. Five media interviews in the first week.
 
-Also maintaining **[RapidRails](https://rapidrails.cc)** (UI component library for Rails) and **[SolveTO](https://solveto.ca)** (civic accountability platform for Toronto).
+Launching **[STL Agent](/projects/stl-agent/)** — a 60-second response system for GTA contractors. The contractor who picks up the phone first wins the job. STL makes sure that contractor is you. Booking 5 contractors for white-glove install this quarter.
+
+Also maintaining **[RapidRails](https://rapidrails.cc)** (the UI component library both products are built on).

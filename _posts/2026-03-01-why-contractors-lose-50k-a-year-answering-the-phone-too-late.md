@@ -3,7 +3,7 @@ layout: post
 title: "Why contractors lose $50K a year answering the phone too late"
 date: 2026-03-01
 description: "Contractors lose thousands every year because they can't respond fast enough. I built a system that fixes that."
-tags: [business, contractors, ai]
+tags: [business, contractors, ai, stl]
 ---
 
 It's 2pm on a Tuesday. A homeowner in Mississauga just submitted a quote request for a kitchen renovation. They found the contractor's website, liked the portfolio, filled out the form.

@@ -3,6 +3,8 @@ layout: project
 title: ShipIt.day
 description: "Accountability tool for builders. Track your progress publicly and stay honest about what you are shipping."
 link: https://shipit.day
+order: 4
+status: "Live"
 ---
 
 ShipIt.day is an accountability tool for builders. Connect your GitHub, track your progress publicly, and stay honest about what you are actually shipping. Share notes with your team, keep yourself accountable, and get feedback on your work.
