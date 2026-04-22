@@ -23,7 +23,7 @@ It starts with a real conversation with a real human. I asked Toronto residents 
 
 I asked plumbers, electricians, and roofers what was killing their conversion rate. The answer was always the same: "I'm on a job, my phone's in the truck, by the time I see the form the customer already booked someone else." So STL Agent runs on Telegram and pings them in seconds — not because Telegram is trendy, but because it's the one app that already lives on a contractor's lock screen.
 
-I write code with AI agents — Claude Code, Cursor, agentic workflows — every day. Not to replace thinking. To multiply the output of one person who already understands the problem deeply. The thinking and the product decisions are mine. The implementation moves at a pace that used to require a team of four.
+I write code with AI agents every day. Not to replace thinking. To multiply the output of one person who already understands the problem deeply. The thinking and the product decisions are mine. The implementation moves at a pace that used to require a team of four. (AI is not a substitute for thinking. It is a multiplier.)
 
 Every product on this page was built this way. From first conversation to live users. Numbers above are real.
 
