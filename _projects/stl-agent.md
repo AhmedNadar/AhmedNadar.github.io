@@ -1,7 +1,7 @@
 ---
 layout: project
 title: STL Agent
-description: "Speed-to-lead for Toronto contractors. Customers hear back in minutes while you stay on the job — not at a laptop."
+description: "Speed-to-lead for Toronto contractors. Customers hear back in minutes while you stay on the job, not at a laptop."
 link: https://stl.ahmednadar.com
 order: 2
 status: "Booking 5 GTA contractors"
@@ -13,11 +13,6 @@ status: "Booking 5 GTA contractors"
 <p class="cta-row">
   <a href="/stl-score/" class="cta-button">Get your free Speed-to-Lead Score &rarr;</a>
 </p>
-
-<p class="cta-row" style="margin-top: 1rem;">
-  <a href="https://stl.ahmednadar.com/demo-access/new" class="cta-button">Request a live product walkthrough &rarr;</a>
-</p>
-<p style="font-size: 0.95rem; max-width: 36rem; color: var(--color-text-muted, #6e6460);">Short form (name and email). You will land in the read-only sandbox the same way a serious prospect does — the public marketing site no longer exposes the full UI to anonymous visitors.</p>
 
 ---
 
@@ -32,6 +27,10 @@ By the time you see the form at 5pm, the homeowner has already submitted to two 
 You never even knew you lost the job.
 
 This happens to GTA contractors **every single day.**
+
+<p class="cta-row" style="margin-top: 1rem;">
+  <a href="https://stl.ahmednadar.com/demo-access/new" class="cta-button">Request a live product walkthrough &rarr;</a>
+</p>
 
 ---
 
