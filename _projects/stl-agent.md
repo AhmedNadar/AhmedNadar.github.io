@@ -76,7 +76,7 @@ No CRM login. No second app to learn. If you already use Telegram, it fits how y
 
 I work with **5 GTA contractors at a time**.
 
-1. **Free Speed-to-Lead Score** — 30-second form, you see what slow follow-up is costing you in dollars.
+1. **Free Speed-to-Lead Score** — 30 seconds. You see what slow follow-up costs you, why your specific situation leaks, and three things you can fix this week without hiring anyone.
 2. **Speed-to-Lead Audit ($497)** — 20-minute call + a 1-page report: where leads leaked, what it cost, what to fix in 7 days. Full refund if it was not worth it.
 3. **STL install ($2,500 one-time)** — I wire everything to where your leads already come in and turn the full system on. White-glove, about a week.
 4. **STL Operator ($197/month)** — It stays running, monitored, morning briefings on your schedule, one monthly review to tighten follow-up.
