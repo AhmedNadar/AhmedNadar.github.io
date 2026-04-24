@@ -128,5 +128,5 @@ The goal: **no lead waits** because you did not see it in time.
   <a href="/stl-score/" class="cta-button">Get your free Speed-to-Lead Score &rarr;</a>
 </p>
 
-Or [book a 20-minute audit call](https://cal.com/ahmednadar/stl-audit) directly.
+Or [book a 20-minute audit call](https://cal.com/ahmed-nadar/stl) directly.
 Or just [email me](mailto:ahmed@ahmednadar.com) — I reply inside an hour.
