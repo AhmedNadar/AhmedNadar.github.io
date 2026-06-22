@@ -1,14 +1,14 @@
 ---
 layout: project
 title: SolveTO
-description: "Civic accountability for Toronto. 418,000 city assets mapped. AI turns a photo into a real 311 report in 10 seconds."
+description: "Civic accountability across Toronto, Mississauga, and Milton. Over 1 million public assets mapped. AI turns a phone photo into a real 311 report in under 30 seconds."
 link: https://solveto.ca
 featured: true
 order: 1
-status: "Live"
+status: "Live in 3 cities"
 ---
 
-SolveTO is a civic accountability platform for Toronto. Any resident can report any issue in 10 seconds. I talked to residents, understood what was frustrating about reporting local issues, designed the flow, and built the whole thing with Rails and AI agents. It is live and serving real users.
+SolveTO is a civic accountability platform now live across three cities: Toronto, Mississauga (SolveSAUGA), and Milton (SolveMILTON). One account, one login, one report history that follows you across city lines. Any resident can report any issue in under 30 seconds. I talked to residents, understood what was frustrating about reporting local issues, designed the flow, and built the whole thing with Rails and AI agents. It is live and serving real users.
 
 <figure class="project-showcase project-showcase--single">
   <img src="{{ '/assets/images/posts/og-toronto-deserves-better-than-311.png' | relative_url }}" alt="SolveTO map of Toronto connecting civic reporting with open data" width="1200" height="630" loading="lazy" decoding="async">
@@ -25,4 +25,4 @@ The workflow is three steps. **Spot** an issue and snap a photo. **Send** it thr
 
 ## What Makes It Different
 
-Community verification lets neighbors vote on reports, building trust through crowd validation. Toronto's 25 municipal wards are fully integrated. You can view issues by ward, see ward boundaries on the map, and get ward specific statistics. Every report gets detailed resolution tracking with status updates and before/after documentation. A public analytics dashboard tracks councillor performance, SLA compliance, and community engagement across all 25 wards.
+Community verification lets neighbors vote on reports, building trust through crowd validation. The platform now maps over 1 million public assets across Toronto, Mississauga, and Milton, all from public open data, with wards and boundaries fully integrated so you can view issues by area and get local statistics. Every report gets detailed resolution tracking with status updates and before/after documentation. A public analytics dashboard tracks councillor performance, SLA compliance, and community engagement. The hard part was never one more city. It was building one platform that does not start over every time a resident moves or a new town comes online.
