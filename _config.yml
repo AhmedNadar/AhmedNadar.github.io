@@ -1,6 +1,6 @@
 # Site Settings
 title: Ahmed Nadar
-description: "Toronto-based product builder. I ship Rails + AI apps that solve real problems for real people. SolveTO maps 418,000 civic assets. STL Agent helps GTA contractors stop losing $50K/year to slow follow-up."
+description: "Toronto-based product builder. I ship Rails + AI apps that solve real problems for real people. SolveTO maps over 1 million civic assets across Toronto, Mississauga, and Milton. STL Agent helps GTA contractors stop losing $50K/year to slow follow-up."
 url: "https://ahmednadar.com"
 baseurl: ""
 permalink: /:title/

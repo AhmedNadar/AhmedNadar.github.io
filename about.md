@@ -11,7 +11,7 @@ For ten years I have been doing the same thing: figuring out what a real human a
 
 ## What I'm building right now
 
-**[SolveTO](https://solveto.ca)** — civic accountability for Toronto. Snap a photo of a pothole, broken streetlight, or graffiti — AI writes a proper 311-style report, the city and your councillor get notified, the report goes on a public map, and neighbors can vote and verify. **418,000 city assets mapped. All 25 wards integrated. Real residents using it. Five media interviews in the first week.** Built ~90% with AI-assisted development on Rails 8.
+**[SolveTO](https://solveto.ca)** — civic accountability now live across three cities: Toronto, Mississauga (SolveSAUGA), and Milton (SolveMILTON). Snap a photo of a pothole, broken streetlight, or graffiti — AI writes a proper 311-style report, the city and your councillor get notified, the report goes on a public map, and neighbors can vote and verify. **Over 1 million public assets mapped across three cities. One account that follows you across city lines. Real residents using it. Five media interviews in the first week.** Built ~90% with AI-assisted development on Rails 8.
 
 **[STL Agent](/projects/stl-agent/)** — speed-to-lead for GTA contractors. Average GTA contractor takes 42 hours to reply to a quote request. The customer who responds first wins 78% of the time. STL pings the contractor on Telegram in under 60 seconds, AI emails the customer back, and the whole CRM lives inside Telegram so the contractor stays on the roof. Currently booking 5 GTA contractors for white-glove install.
 
@@ -43,6 +43,6 @@ That is what **[STL Agent](/projects/stl-agent/)** is for contractors: I show up
 
 If you are a Toronto contractor losing jobs to slow follow-up, start with the **[free Speed-to-Lead Score](/stl-score/)** — 30 seconds, no spam, instant number.
 
-If you have a different problem worth solving — civic, SMB, anything where one developer with Rails + AI can build the right tool — email me at [ahmed@ahmednadar.com](mailto:ahmed@ahmednadar.com). I reply inside an hour, usually less.
+If you have a different problem worth solving — civic, SMB, anything where one developer with Rails + AI can build the right tool — [get in touch through the contact page](/contact/). I reply inside an hour, usually less.
 
 Also on [GitHub](https://github.com/AhmedNadar) and [Twitter](https://twitter.com/ahmednadar) — most of my building-in-public happens there.

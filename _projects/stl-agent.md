@@ -129,4 +129,4 @@ The goal: **no lead waits** because you did not see it in time.
 </p>
 
 Or [book a 20-minute audit call](https://cal.com/ahmednadar/stl-audit) directly.
-Or just [email me](mailto:ahmed@ahmednadar.com) — I reply inside an hour.
+Or just [get in touch](/contact/) — I reply inside an hour.

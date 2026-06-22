@@ -102,7 +102,7 @@ Forked from the open-source [Fazm](https://github.com/mediar-ai/fazm) engine by 
 
 **Public launch target: Q3 2026.**
 
-If you want early access, [contact me](mailto:ahmednadar@gmail.com) and tell me which audience you fit (teacher, nurse, elderly family member, dev, etc).
+If you want early access, [contact me](/contact/) and tell me which audience you fit (teacher, nurse, elderly family member, dev, etc).
 
 <p class="cta-row">
   <a href="https://heyloon.com" class="cta-button">heyloon.com &rarr;</a>
