@@ -1,0 +1,27 @@
+---
+layout: post
+title: "The data was always there"
+date: 2026-04-20
+description: "Most of what a resident needs to understand their own street is already public. It was just scattered, unconnected, and written for procedure instead of people. The value was never in collecting it. It was in connecting it."
+tags: [solveto, open-data, civic-tech]
+---
+
+A few weeks into building SolveTO, someone mentioned that Toronto's council voting records were sitting on open data. I went looking, expecting a gap. Instead I found everything. Meeting minutes, motion text, vote tallies councillor by councillor, going back years. All public, all free, and all buried in PDFs written for parliamentary procedure rather than for a resident trying to understand what happened last Tuesday.
+
+That moment changed how I think about this whole project. I had assumed the hard part was getting the information. The hard part was that the information already existed and nobody could use it.
+
+<!-- IMAGE: One searchable map of Toronto's public assets with a council vote tally and a TTC stop popup beside it. Add to /assets/images/posts/ and reference as {{ site.url }}/assets/images/posts/data-was-always-there.png -->
+
+The council records are the clearest example. The official version runs to hundreds of pages, with agenda items numbered like EX29.4 and language that assumes you have read Robert's Rules of Order. There is no plain-language summary, no picture of who voted which way, no way to filter to every time council discussed potholes or transit or parks. The data is there. The understanding is not. When you can see that [your own councillor voted against a motion to investigate why Toronto roads fall apart so fast](https://solveto.ca/blog/every-meeting-every-motion-every-vote), a motion that failed nine to thirteen, you walk into the next community meeting with a specific question for a specific person. That is not politics. That is just knowing what happened and who decided it. SolveTO points you at the readable version and links straight back to the official record on toronto.ca, so you decide how far in you go. It complements 311 and the city's own portal, it does not replace either.
+
+The same thing happens at the level of a single street. SolveTO now has [more than 1,300 pages](https://solveto.ca/blog/1300-pages-from-one-database), and almost none of that is new content I invented. It is the wards, the issue types, and the councillors the city already publishes, turned into pages that answer the questions people actually type. If you search for potholes on the Danforth, there should be a page with real numbers for that ward: how many were reported, how many were resolved, what the response time looks like. Before, that page did not exist anywhere on the internet. Now it does, and it is backed by real community reports, not filler. The records were always public. They just had no door a resident could walk through.
+
+[Your bus stop is the same story](https://solveto.ca/blog/your-bus-stop-has-a-story) told one more way. When a streetlight or a sidewalk breaks, you report it to 311. When your route gets diverted or suspended, the TTC publishes a service alert on its own website. For a resident, these two have never been in one place. You check one app for the street and another for the bus, and you are the one stitching the picture together every single time, because the TTC is a separate agency from the city and neither system feeds the other in public. SolveTO now shows every TTC stop on the same map, turns the stops red when their route has an active alert, and lets you tap a stop to see exactly what is happening. If the bench is broken or the shelter is smashed, you report it right there, and that report goes to both 311 and the TTC, which actually owns the stop. Before, that report reached only 311 and the agency that owns the thing never got a copy.
+
+None of these are new datasets. They are existing public records that lived in separate rooms, and the work was opening the doors between the rooms.
+
+Once you see it that way, the boundary of a city stops looking special. A campus has sidewalks, streetlights, benches, bins, and a door that sticks every time it rains. So does a hospital ground, a downtown business district, a network of trails. Each one is [a small town with a fence around it](https://solveto.ca/blog/your-property-is-a-small-town), full of people who notice when something breaks and have no fast way to tell whoever fixes it, so it sits. A city is just one shape on a map. Your campus is another shape, your district is another, and the same map and the same pins work the moment you draw one more boundary around your property.
+
+Login is part of that on purpose. A report carries a real person's voice to the people who can act on it, and the loop only closes when there is someone to tell that it is done. That accountability is the point, not friction for its own sake.
+
+I keep coming back to the fact that I did not have to collect almost any of this. The voting records, [the infrastructure counts](/418000-assets-one-map-and-why-it-matters/), the transit alerts, the ward boundaries were all public the whole time. They were just scattered across separate systems, written for procedure, and impossible to hold in one view. The value was never in gathering something new. It was in [connecting what was already there](/canadas-civic-layer/) until a resident could finally see their own street whole.
