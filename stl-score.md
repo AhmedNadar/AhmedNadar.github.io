@@ -94,7 +94,7 @@ description: "Find out how much your business is losing every month from slow le
   </div>
 
   <div id="stl-error" class="stl-feedback stl-feedback-error" style="display: none;">
-    <p>Something went wrong submitting the form. Email me directly at <a href="mailto:ahmed@ahmednadar.com">ahmed@ahmednadar.com</a> and I will send the report manually.</p>
+    <p>Something went wrong submitting the form. Please try again, or reach me through the <a href="/contact/">contact page</a>.</p>
   </div>
 </div>
 
