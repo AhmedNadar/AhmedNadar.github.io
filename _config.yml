@@ -5,6 +5,7 @@ url: "https://ahmednadar.com"
 baseurl: ""
 permalink: /:title/
 markdown: kramdown
+future: true   # build posts dated in the future (lets the June 25 talk post publish on push)
 
 # Author
 author:
