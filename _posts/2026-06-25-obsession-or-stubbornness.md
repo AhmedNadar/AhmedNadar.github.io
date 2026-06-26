@@ -4,6 +4,7 @@ title: "Obsession or Stubbornness?"
 date: 2026-06-25
 description: "The talk I gave at Curio's Smarter Cities Through Open Data: how one pothole turned into a kind of intelligence for a whole city. The slides are yours, free."
 tags: [solveto, civic-tech, talks, open-data]
+published: false
 ---
 
 Tonight I gave a talk at Curio's *Smarter Cities Through Open Data*, in the spot Arthur Smith handed me. This is the short version of it, and the slides are yours at the bottom if you want to take the whole thing with you.
