@@ -1,0 +1,30 @@
+---
+layout: post
+title: "Fifty-One Percent of the Code, Ten Percent of the Speed"
+date: 2026-07-11
+description: "AI writes half the code committed to GitHub now, and teams ship about ten percent faster. The code was never the slow part."
+tags: [ai, software-development, engineering, vibe-coding]
+published: false
+---
+
+In early 2026 a number crossed a line that would have sounded like science fiction a few years earlier. 51% of all code committed to GitHub is now AI-generated or substantially AI-assisted. Machines write most of the code now. For me the number didn't read as a revolution. It read as a Tuesday, because most of the code I shipped this year I didn't type either. An agent wrote it inside a harness I built, and I reviewed what came out. The number that actually stopped me was the other one. System-level delivery velocity for software teams went up about 10% over the same stretch. Half the code is written by machines, and teams ship roughly a tenth faster. The writing was never the part that was slow.
+
+That gap is the whole story. AI is fast at the task and slow to move the system, because software doesn't ship function by function. It ships through a pipeline, and the model only touched one stage of it. The same gap shows up one level down, in the individual developer, where studies found people using AI tools ran [19% slower while they felt 20% faster](/the-19-percent-lie/). Felt speed and shipped speed are different numbers at every scale.
+
+![Fifty-one percent of the code, ten percent of the speed]({{ site.url }}/assets/images/posts/fifty-one-percent-and-ten.png)
+
+The stages that decide whether software ships safely are the same ones they were two years ago. Architecture, the decision about how twelve functions fit together before any of them get written, is still mine. Deployment configuration is still mine. Infrastructure context, the DNS and the SSL and the load balancer that the function knows nothing about, is still mine. Security review is still mine too, except now there is more of it, because the data on AI and security is getting worse instead of better. March 2026 alone produced 35 new CVEs traced to AI-generated code, up from 6 in January. Somewhere between 40 and 62 percent of AI-generated code ships with a security flaw in it. When the test is cross-site scripting, the model fails to prevent it 86% of the time.
+
+The reason is structural, not a bug you can patch. A model writing a function makes it pass the test case in the prompt. It does not model the threat surface of the system the function is about to join, because that system was never in its context. The vulnerability doesn't come from bad code. It comes from missing context. The model does what you asked, correctly, and the result is dangerous in the place it actually runs. I wrote about [where verification has to live in a harness](/where-verification-actually-belongs-in-agent-harnesses/), and the short version is that the thing writing the code cannot be the thing that checks it.
+
+Senior engineers already know this, and the adoption numbers don't reflect it. Only 2.6% of senior engineers say they have high trust in AI code accuracy, while 20% report high distrust. The people who have shipped the most are the most skeptical. Yet only 48% of developers always review AI-generated code before they commit it. The experience is there. The habit that should follow from it is not.
+
+The cost shows up later, in maintenance. AI-generated code produces 1.7 times more production issues than code a human wrote. That isn't an argument against using the tools. I use them every day. It's an argument against treating "the model wrote it" as if it meant "a human confirmed this works in this system, at this scale, under these conditions." The generation is the first draft. The audit is the work.
+
+The line I keep coming back to is that you can vibe code a demo, but you can't vibe code a product. A demo lives on the happy path: one user, one input that matches the schema, one clean output. A product lives on every other path, the concurrent users, the input that doesn't match, the third-party API that goes down at 2am, the deploy you have to roll back because it broke something nobody connected to it. AI gets you to the demo faster than anything before it, and that speed turns into a trap the moment it convinces you the rest of the work is fast too. I went deeper on what that speed is even for in [what are you building while AI speeds up](/what-are-you-building-while-ai-speeds-up/).
+
+The $4.7 billion that companies spent on vibe-coding tools in the last year is a real bet on developer speed. The 10% velocity gain is what the bet has paid back so far. That gap isn't the tools failing. It's the constraint sitting somewhere the tools don't reach. The constraint was coordination, architecture, and quality assurance before AI showed up, and AI made code generation faster while leaving all three exactly where they were.
+
+The teams posting real gains are not the ones running the best model. They are the ones who built the gates first. Organizations that put four controls in front of AI-generated code before it reaches production, automated security scanning, architecture review, test coverage parity, and traceability for what shipped, report 30 to 50 percent faster delivery with no rise in production incidents. The governance feels like drag while you're building. It's the reason the system holds once it's live. That is the same lesson I learned building a harness, where [the loop around the agent matters more than the agent](/7-patterns-for-long-running-agent-harnesses/).
+
+51% is a real number, and it describes a real change in who writes the code. It does not describe a change in how fast working software reaches people, because writing the code was the one part that was already fast. The model changed the typing. The job, the part where code turns into a product people can trust, is still sitting exactly where it was, waiting for whoever is willing to do the work the model can't.
