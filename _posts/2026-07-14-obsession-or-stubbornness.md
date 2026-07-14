@@ -1,13 +1,12 @@
 ---
 layout: post
 title: "Obsession or Stubbornness?"
-date: 2026-06-25
-description: "The talk I gave at Curio's Smarter Cities Through Open Data: how one pothole turned into a kind of intelligence for a whole city. The slides are yours, free."
-tags: [solveto, civic-tech, talks, open-data]
-published: false
+date: 2026-07-14
+description: "The talk I gave at Civic Tech Toronto: how one pothole turned into a reporting platform, and a kind of intelligence, for a whole city. The slides are yours, free."
+tags: [solvecanada, civic-tech, talks, open-data, canada]
 ---
 
-Tonight I gave a talk at Curio's *Smarter Cities Through Open Data*, in the spot Arthur Smith handed me. This is the short version of it, and the slides are yours at the bottom if you want to take the whole thing with you.
+Tonight I gave a talk at Civic Tech Toronto. This is the short version of it, and the slides are yours at the bottom if you want to take the whole thing with you.
 
 ## It started with a pothole
 
@@ -29,7 +28,7 @@ This is not really about me. My only specialty is refusing to walk past a proble
 
 One photo. The AI drafts the whole report and you send it in about thirty seconds. Or if you are stopped at a light and cannot take a photo, five spoken words is enough. All I was trying to do was make caring cheap again.
 
-But the app is the small part. Here is the bigger thing, and it is the part this room came for. [The data was always there](/the-data-was-always-there/). The city has been collecting it for decades, over a million pieces of public infrastructure, sitting in the open, free, for years. Nobody had simply connected it. The technology was never the bottleneck. We were.
+But the app is the small part. Here is the bigger thing, and it is the part this room came for. [The data was always there](/the-data-was-always-there/). The cities have been collecting it for decades, close to two million pieces of public infrastructure across five cities, sitting in the open, free, for years. Nobody had simply connected it. The technology was never the bottleneck. We were.
 
 So this is not a complaint box. It is a city intelligence layer. The reports are the input, the city's own open data is the context, and [Pulse](/fly-over-your-city/) is how you see all of it at once: a living map of the city you can fly over, where every report glows and the whole thing replays through time so you watch the city quietly fix itself.
 
@@ -37,7 +36,7 @@ And when something gets fixed, the map celebrates it. A flag goes up. The people
 
 ## The distance is a choice
 
-Singapore runs one platform for an entire country. Canada ranks forty-seventh in the world for digital government. The second city was hard. The fifth city is a Tuesday afternoon. So the gap between where we are and one platform for every Canadian city is not a money problem, and it is not a talent problem. It is an architecture problem, which means it is a choice. I have already proven the hard part works, and I am not waiting for permission to build the rest.
+Singapore runs one platform for an entire country. Canada ranks forty-seventh in the world for digital government. The second city was hard. And the fifth city really is a Tuesday afternoon: last week I launched two more, Waterloo and Kitchener, in a single afternoon. Five cities now, all on one map. That platform finally has a name and a home. Solve Canada, at [solvecanada.ca](https://solvecanada.ca), is the umbrella over SolveTO, SolveSAUGA, SolveMILTON, and the two I just added. Every city keeps its own name and its own front door, and underneath they run on one system that already crosses city lines. So the gap between where we are and one platform for every Canadian city is not a money problem, and it is not a talent problem. It is an architecture problem, which means it is a choice. I have already proven the hard part works, and I am not waiting for permission to build the rest.
 
 So, obsession or stubbornness? Honestly, it was both. And that is the point. You do not need permission, and you do not need to be the smartest person in the room. You just have to refuse to accept that broken is normal.
 
