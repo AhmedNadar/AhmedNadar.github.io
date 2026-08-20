@@ -6,11 +6,13 @@ description: "SolveMILTON is live. A Milton resident can report a problem at a p
 tags: [solveto, milton, multi-city, civic-tech]
 ---
 
+*Update, August 2026: the platform described here is now called Solve Canada, live in seven Canadian cities. SolveTO is the Toronto city brand within it.*
+
 A few hours ago a resident in Milton filed a report about a dip in the road that turns into a puddle in the rain and a sheet of ice in the winter. A minute later it was in front of the Town and in front of their ward councillor, with the location, the photo, and the surrounding street attached. They did not fill out a form they had to find first. They did not call a line and wait. They reported it the way you report anything else now, in the time it takes to send a text.
 
 That is what went live in Milton today, and it is the same thing I built for [Toronto and then Mississauga](/crossing-city-lines/): one door instead of five, and a report that stays visible after you knock.
 
-<!-- IMAGE: A SolveMILTON report on a phone showing a Milton street with the location and surrounding assets already attached, beside the Toronto and Mississauga logos. Add to /assets/images/posts/ and reference as {{ site.url }}/assets/images/posts/milton-is-live.png -->
+![Most reporting tools start empty; this one arrives already knowing the town parks, schools, fire stations, facilities, and parking lots]({{ site.url }}/assets/images/posts/milton-is-live.png)
 
 ## The report already knows the town
 

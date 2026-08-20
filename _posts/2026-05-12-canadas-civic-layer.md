@@ -6,11 +6,13 @@ description: "Singapore built one civic platform for the whole country. Canada b
 tags: [solveto, canada, civic-tech]
 ---
 
+*Update, August 2026: the platform described here is now called Solve Canada, live in seven Canadian cities. SolveTO is the Toronto city brand within it.*
+
 Singapore built OneService and solved something Canada still hasn't. One app, one login, one interface for every city in the country. A resident reports a pothole, a noisy site, a flooded drain, and the same flow finds the right agency every time. Move across the island and you don't relearn anything, because the system was never built around one city to begin with.
 
 I keep coming back to that, because it is the cleanest version of the thing I am trying to say. Singapore is not richer than Canada, not better staffed, not sitting on some piece of technology we can't buy. [The difference is not resources](https://solveto.ca/blog/canada-47-the-gap-is-not-resources). The difference is that someone decided the civic layer should be one thing instead of a thousand.
 
-<!-- IMAGE: A single map spanning Toronto and Mississauga with one login badge, the seam between cities dissolving. Add to /assets/images/posts/ and reference as {{ site.url }}/assets/images/posts/canadas-civic-layer.png -->
+![Singapore runs one platform for a whole country; Canada runs one platform per city]({{ site.url }}/assets/images/posts/canadas-civic-layer.png)
 
 Canada took the other path, and not because anyone chose it. We arrived here by accumulation. Every municipality procured its own platform, signed its own vendor agreements, and trained its residents on its own forms. The result is a country where moving from one city to the next means starting over with a completely different system for the exact same broken curb.
 

@@ -8,7 +8,7 @@ tags: [solveto, privacy, civic-tech]
 
 I think about civic reporting as a relationship between two people who never meet. One person sees something wrong on the street and decides to say something. Another person, somewhere in the photo, never asked to be part of it. Most reporting tools forget that both of them exist. I built two decisions into SolveTO that start from the opposite assumption, that both deserve respect, and over time I realized they were the same decision wearing two faces.
 
-<!-- IMAGE: Split frame, a blurred face shielded in a report on one side, the one-tap Snap voice flow on the other. Add to /assets/images/posts/ and reference as {{ site.url }}/assets/images/posts/dignity-and-friction.png -->
+![Two people in one report: the person in the photo, protected from the system, and the person taking it, invited into it]({{ site.url }}/assets/images/posts/dignity-and-friction.png)
 
 The first one came from a report I will not forget. Someone flagged a person sleeping rough on a sidewalk. The photo was clear, the face was visible, and it went out to the city and a ward councillor completely exposed. The person submitting it had good intentions. They were asking for help, not publishing a portrait of someone at the lowest point of their life. But the software treated that face like it treated a pothole, as just another pixel to pass along, and that is a failure of care, not a feature gap.
 

@@ -10,7 +10,7 @@ A few weeks into building SolveTO, someone mentioned that Toronto's council voti
 
 That moment changed how I think about this whole project. I had assumed the hard part was getting the information. The hard part was that the information already existed and nobody could use it.
 
-<!-- IMAGE: One searchable map of Toronto's public assets with a council vote tally and a TTC stop popup beside it. Add to /assets/images/posts/ and reference as {{ site.url }}/assets/images/posts/data-was-always-there.png -->
+![Council voting records, 418,000 public assets, and transit alerts, all already published and free, none of them connected]({{ site.url }}/assets/images/posts/data-was-always-there.png)
 
 The council records are the clearest example. The official version runs to hundreds of pages, with agenda items numbered like EX29.4 and language that assumes you have read Robert's Rules of Order. There is no plain-language summary, no picture of who voted which way, no way to filter to every time council discussed potholes or transit or parks. The data is there. The understanding is not. When you can see that [your own councillor voted against a motion to investigate why Toronto roads fall apart so fast](https://solveto.ca/blog/every-meeting-every-motion-every-vote), a motion that failed nine to thirteen, you walk into the next community meeting with a specific question for a specific person. That is not politics. That is just knowing what happened and who decided it. SolveTO points you at the readable version and links straight back to the official record on toronto.ca, so you decide how far in you go. It complements 311 and the city's own portal, it does not replace either.
 

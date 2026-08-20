@@ -6,9 +6,11 @@ description: "A pothole feels the same in two cities, but the moment you report 
 tags: [solveto, multi-city, civic-tech]
 ---
 
+*Update, August 2026: the platform described here is now called Solve Canada, live in seven Canadian cities. SolveTO is the Toronto city brand within it.*
+
 There is a pothole I swerved for months on my street in Toronto, and the only reason I never reported it is that reporting it took longer than living with it. So in February I built a way to do it in about thirty seconds. You take a photo, the report writes itself, and it reaches the city and your councillor with the location and the details already filled in. I called it SolveTO and figured it was my own private annoyance.
 
-<!-- IMAGE: One account switching cities in a dropdown, Toronto to Mississauga to Milton, report history following along. Add to /assets/images/posts/ and reference as {{ site.url }}/assets/images/posts/crossing-city-lines.png -->
+![One account crossing a municipal boundary, carrying the same login and the same report history into the next city]({{ site.url }}/assets/images/posts/crossing-city-lines.png)
 
 It was not. Within weeks hundreds of Torontonians were using it, and the replies all said the same thing, people naming their own street and their own form they had given up on. Then people outside Toronto started asking when it was their turn.
 

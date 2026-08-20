@@ -6,6 +6,8 @@ description: "The technology is ready. The contracts were built for something el
 tags: [civic-tech, government-ai, procurement, canada]
 ---
 
+*Update, August 2026: the platform described here is now called Solve Canada, live in seven Canadian cities. SolveTO is the Toronto city brand within it.*
+
 A city already owns the data. It could plug a new tool into what it has in an afternoon. And it won't, because a contract signed three years ago says the work belongs to a vendor whose product was current the day the ink dried. I build civic software, so I see government technology from the side most procurement officers never do, and that same scene repeats in city after city. The wall is almost never the technology. The wall is how the technology gets bought.
 
 Portugal makes the contrast easy to see. At the end of 2024 it launched a generative AI assistant that covers more than 2,300 government services and answers questions in more than a dozen languages, with application tracking and appointment booking on the roadmap. Portugal did not do this because it had more money than everyone else. It did it because someone decided digital service delivery was a government responsibility, not a procurement exercise. Most countries decided the opposite.

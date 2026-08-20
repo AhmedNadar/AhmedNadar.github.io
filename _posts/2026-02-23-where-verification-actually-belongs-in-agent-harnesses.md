@@ -55,7 +55,7 @@ Geoffrey Huntley, creator of the [Ralph loop](https://ghuntley.com/ralph), takes
 
 His argument has three parts.
 
-**1. Context window cost.** MCP servers consume tokens just by being loaded, tool definitions, schemas, protocol overhead. Puppeteer adds base64 screenshot data on top of that. Huntley found that MCP servers can drop usable context from ~176k to ~120k tokens. That's 30% of the agent's reasoning capacity gone before it writes a line of code. (I break down the full token budget in [Part 3](/2026/02/24/context-window-economics-for-ai-agents).)
+**1. Context window cost.** MCP servers consume tokens just by being loaded, tool definitions, schemas, protocol overhead. Puppeteer adds base64 screenshot data on top of that. Huntley found that MCP servers can drop usable context from ~176k to ~120k tokens. That's 30% of the agent's reasoning capacity gone before it writes a line of code. (I break down the full token budget in [Part 3](/context-window-economics-for-ai-agents/).)
 
 **2. Role confusion.** An agent that codes *and* visually inspects is doing two jobs in one context window. It's like having a developer also be the QA tester. Same screen, same time, half their desk taken up by QA tools.
 
@@ -65,7 +65,7 @@ His argument has three parts.
 
 I tried it. Here's what happened.
 
-Each screenshot costs roughly 3,000 to 6,000 tokens depending on page size. Over multiple iterations of verifying key routes, this adds up fast, especially before you count the MCP overhead itself, tool schemas, protocol definitions, capability negotiation. Every MCP server you load eats context just by existing, whether you call its tools or not. ([Part 3](/2026/02/24/context-window-economics-for-ai-agents) has the full token math.)
+Each screenshot costs roughly 3,000 to 6,000 tokens depending on page size. Over multiple iterations of verifying key routes, this adds up fast, especially before you count the MCP overhead itself, tool schemas, protocol definitions, capability negotiation. Every MCP server you load eats context just by existing, whether you call its tools or not. ([Part 3](/context-window-economics-for-ai-agents/) has the full token math.)
 
 By iteration 5, the agent started forgetting parts of its instructions. By iteration 8, it was re-implementing features it had already built. The context window was so full of screenshot data that the actual task instructions were getting pushed out.
 

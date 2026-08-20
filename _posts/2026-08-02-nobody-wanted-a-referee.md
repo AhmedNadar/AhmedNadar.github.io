@@ -22,7 +22,7 @@ Neither of those is a verdict. That is the entire point, and it is the part I go
 
 The instinct when you build measurement into a system that never had it is to build the referee. You have the data, you can see who is slow, and the product that grades performance feels like the honest one. It is also the product nobody adopts, because the moment your software renders a judgment, every party in the system starts arguing with the judgment instead of using the data. You have handed them a fight rather than a tool, and fights are expensive to be inside of.
 
-<!-- IMAGE: a scorecard next to a whistle, the whistle crossed out. Or a ward-level report count chart. Add to /assets/images/posts/ and reference as {{ site.url }}/assets/images/posts/nobody-wanted-a-referee.png -->
+![The referee renders a verdict and nobody adopts it; the scoreboard keeps score and the argument gets a starting point]({{ site.url }}/assets/images/posts/nobody-wanted-a-referee.png)
 
 The honest version of the civic story matters here too. Most of what gets reported in Toronto and fixed lands inside the city's own published windows, the four-day pothole standard among them. That is not a story of a broken city, and I have never told it as one. The one place I do push is on the word itself, because [a status is not a fact](https://solveto.ca/blog/completed-does-not-mean-fixed) and a ticket handed to another division should not count as a thing that got fixed. That is a scoring question, not a verdict about anyone's effort. The crews were always doing the work. What was missing was not effort, it was a scoreboard both sides could see, and the reason it was missing is that keeping score in public is a commitment nobody had signed up for.
 

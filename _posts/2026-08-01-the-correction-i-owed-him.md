@@ -26,7 +26,7 @@ There is a version of this that goes the other way, which is the one I keep watc
 
 The engineering habit and the civic habit turn out to be the same habit. Check the premise before you act on it. Pay the correction while it is still small. Put the fix in the same place the claim was made, so anyone who finds one finds the other.
 
-<!-- IMAGE: radio studio microphone, or a screenshot of the published correction with the date visible. Add to /assets/images/posts/ and reference as {{ site.url }}/assets/images/posts/the-correction-i-owed-him.png -->
+![The cost of a correction rising over time: one paragraph if caught inside a day, credibility three months later]({{ site.url }}/assets/images/posts/the-correction-i-owed-him.png)
 
 Tory was right about the thing that mattered, and he named it before I had said a word: you cannot track the outcome of your complaint, and the city does not yet have the technology in place to tell you. That gap is real, [Toronto's Auditor General named it in 2011](https://solveto.ca/blog/the-timeline), and it is the one I built for. I would rather be correct about the small thing so the large thing carries weight.
 

@@ -2,16 +2,21 @@
 layout: page
 title: About
 permalink: /about/
-description: "Toronto-based product builder. I ship Rails apps that solve a specific problem for a specific person. Currently building SolveTO and STL Agent."
+description: "Toronto-based product builder with more than 20 years building software. I ship Rails apps that solve a specific problem for a specific person. Currently building Solve Canada and STL Agent."
 ---
 
-I'm Ahmed. I build Rails apps in Toronto that solve a specific problem for a specific person.
+<div class="about-intro" markdown="0">
+  <img class="about-intro-photo" src="{{ '/assets/images/ahmed-nadar.jpg' | relative_url }}" alt="Ahmed Nadar, photographed against the Toronto skyline" width="168" height="168" loading="eager" decoding="async">
+  <div class="about-intro-text">
+    <p>I'm Ahmed. I build Rails apps in Toronto that solve a specific problem for a specific person. I have spent more than 20 years building software, from interface design through to the systems underneath.</p>
 
-For ten years I have been doing the same thing: figuring out what a real human actually needs and turning it into working software. The tools changed. The work didn't. What did change is how fast one developer can now ship the thing — and how much that speed reshuffles who gets to build what.
+That whole time I have been doing the same thing: figuring out what a real human actually needs and turning it into something that works. The tools changed. The work didn't. What did change is how fast one developer can now ship the thing, and how much that speed reshuffles who gets to build what.
+  </div>
+</div>
 
 ## What I'm building right now
 
-**[SolveTO](https://solveto.ca)** — civic accountability now live across three cities: Toronto, Mississauga (SolveSAUGA), and Milton (SolveMILTON). Snap a photo of a pothole, broken streetlight, or graffiti — AI writes a proper 311-style report, the city and your councillor get notified, the report goes on a public map, and neighbors can vote and verify. **Over 1 million public assets mapped across three cities. One account that follows you across city lines. Real residents using it. Five media interviews in the first week.** Built ~90% with AI-assisted development on Rails 8.
+**[Solve Canada](https://solvecanada.ca)** is the reporting layer for any Canadian city. I started it in Toronto in January 2026, after watching a pothole on my own street go unreported for months because saying something took longer than ignoring it. It now runs in seven Canadian cities: Toronto, Mississauga, Milton, Kitchener, Waterloo, Ottawa, and Peterborough. Each city keeps its own front door, and **[SolveTO](https://solveto.ca)** is the Toronto one. It does not stop at 311 either, because the same city owns the parks, the schools, the transit stops, and the water. Point at any of it, take a photo, and AI writes a report the right department can act on, your councillor sees it, it lands on a public map, and neighbours can verify it. **Over three million pieces of public infrastructure across seven cities. Over a thousand reports filed since February. One account that follows you across city lines. Five media interviews in the first week.** Built ~90% with AI-assisted development on Rails 8.
 
 **[STL Agent](/projects/stl-agent/)** — speed-to-lead for GTA contractors. Average GTA contractor takes 42 hours to reply to a quote request. The customer who responds first wins 78% of the time. STL pings the contractor on Telegram in under 60 seconds, AI emails the customer back, and the whole CRM lives inside Telegram so the contractor stays on the roof. Currently booking 5 GTA contractors for white-glove install.
 
@@ -29,7 +34,7 @@ Every product on this page was built this way. From first conversation to live u
 
 ## What I believe
 
-Writing code stopped being the bottleneck. Understanding the problem is the only hard part now — and it has always been the only hard part. Knowing what to build, for whom, and why. That hasn't changed in ten years.
+Writing code stopped being the bottleneck. Understanding the problem is the only hard part now, and it has always been the only hard part. Knowing what to build, for whom, and why. That hasn't changed in twenty years.
 
 What changed: a single developer who actually talks to the user can now ship the fix the same week. That is the real edge. Not the AI tooling. Not the framework. The willingness to talk to the person, then build the small specific thing that helps them this Tuesday.
 

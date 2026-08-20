@@ -6,6 +6,8 @@ description: "The talk I gave at Civic Tech Toronto: how one pothole turned into
 tags: [solvecanada, civic-tech, talks, open-data, canada]
 ---
 
+*Update, August 2026: Solve Canada is now live in seven Canadian cities, not the five named in this talk. Toronto, Mississauga, Milton, Kitchener, Waterloo, Ottawa, and Peterborough.*
+
 Tonight I gave a talk at Civic Tech Toronto. This is the short version of it, and the slides are yours at the bottom if you want to take the whole thing with you.
 
 ## It started with a pothole

@@ -4,7 +4,6 @@ title: "Not Acceptable"
 date: 2026-07-28
 description: "A resident told me my civic platform rejected his browser. The cause was a Rails default I had never read, and five of the six reasons it gave turned out not to apply to my app."
 tags: [rails, ruby, engineering, accessibility, civic-tech, debugging]
-published: false
 ---
 
 The chair of a residents' association emailed me yesterday to say he had tried to visit the platform I build and could not get in. He was gracious about it and assumed the fault was his. "My browsers were Not Acceptable," he wrote. "Probably too old, I don't keep up with OS and browser updates."
@@ -34,13 +33,13 @@ So I checked what the app actually serves.
 CSS nesting and `:has` were the easy ones. Pull down every stylesheet the page loads and count.
 
 ```bash
-for f in application blog playbook pulse solve_canada tailwind wrapped; do
+for f in application blog dashboard map public reports tailwind; do
   curl -s "https://example.ca/assets/$f.css" -o c.css
   echo "$f  :has=$(grep -o ':has(' c.css | wc -l)  nest=$(grep -oE '\{[^{}]*&' c.css | wc -l)"
 done
 ```
 
-CSS nesting: zero occurrences, across all ten stylesheets, about 630KB of compiled CSS. The build tool had already flattened every nested rule into plain selectors, which is what build tools are for. The gate was protecting a feature the browser never sees.
+CSS nesting: zero occurrences, across all seven stylesheets, about 630KB of compiled CSS. The build tool had already flattened every nested rule into plain selectors, which is what build tools are for. The gate was protecting a feature the browser never sees.
 
 CSS `:has()`: ten rules in the whole 630KB. Ten. And unsupported selectors are not a failure mode in CSS, they are the specification. A browser that does not understand `:has()` skips those rules and renders everything else. Ten skipped rules out of thousands is a cosmetic difference nobody would report as a bug.
 

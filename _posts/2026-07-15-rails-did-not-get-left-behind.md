@@ -26,7 +26,7 @@ I built [Rapidfy](/agentic-rapid-rails-app-in-second/) in Ruby. It generates ful
 
 Those are not language problems. They are [harness problems](/7-patterns-for-long-running-agent-harnesses/), and they exist in every runtime. The Python Agent SDK makes them easier to manage in Python. The Ruby SDK makes the API calls easy and leaves the harness architecture to you. That is a real difference and it is worth naming, but it is the difference between a twenty-line setup and a two-hundred-line setup at the hardest end of the problem, not the difference between a viable AI language and a dead one.
 
-<!-- IMAGE: side-by-side Gemfile showing the anthropic gem and ruby_llm, with the Agent SDK column marked Python/TypeScript only. Add to /assets/images/posts/ and reference as {{ site.url }}/assets/images/posts/rails-did-not-get-left-behind.png -->
+![Ruby, Python and TypeScript compared: the official Anthropic SDK and a multi-provider framework in all three, the Agent SDK in Python and TypeScript only]({{ site.url }}/assets/images/posts/rails-did-not-get-left-behind.png)
 
 The narrative that AI tooling passed Ruby by was never quite accurate. Python got the attention first, and the Agent SDK still has no Ruby port. Both of those are true, and the ecosystem for building real AI-augmented Rails applications is more complete than the people repeating that narrative have checked.
 

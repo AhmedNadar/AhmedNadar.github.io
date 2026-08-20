@@ -6,6 +6,8 @@ description: "A living 3D map of Toronto and Mississauga where the reports resid
 tags: [solveto, pulse, civic-tech]
 ---
 
+*Update, August 2026: the platform described here is now called Solve Canada, live in seven Canadian cities. SolveTO is the Toronto city brand within it.*
+
 A city looks after itself in a thousand small acts nobody sees. A drain gets cleared. A burnt-out light comes back on. A pothole somebody reported on a Tuesday is gone by Friday. It happens around you all the time, and almost none of it is visible to the people it happens for.
 
 I built something that makes it visible. It is called Pulse, and it is part of SolveTO, [live now for Toronto and Mississauga](/crossing-city-lines/). You sign in, and the city you walk through every day is sitting there in three dimensions, at night, [rebuilt from its own public data](/the-data-was-always-there/) and the reports residents have filed. Not a stock map with pins dropped on top. Your actual city, rendered as itself.

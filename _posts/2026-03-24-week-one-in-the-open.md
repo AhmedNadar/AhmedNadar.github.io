@@ -8,7 +8,7 @@ tags: [solveto, toronto, civic-tech]
 
 I launched SolveTO ten days ago expecting a quiet first week, the kind where you watch a few friends try the thing and then you go back to fixing the parts that break. That is not what happened. Reports started coming in from wards I had never set foot in, residents I had never met sending photos of potholes and broken sidewalks and storm drains nobody had bothered to report before. By the end of the week the count sat at [sixty-seven reports across twenty wards](https://solveto.ca/blog/week-1-recap), and three of those were already confirmed fixed by the people who live near them.
 
-<!-- IMAGE: Before-and-after of a pothole report (reported, then spray-paint, then repaired) or a montage of the five news outlet logos. Add to /assets/images/posts/ and reference as {{ site.url }}/assets/images/posts/week-one-recap.png -->
+![Time to file one report: SolveTO two minutes, the city online form five, the 311 phone line seven]({{ site.url }}/assets/images/posts/week-one-recap.png)
 
 The pattern underneath those numbers is the whole reason I built this. Reporting an issue to the city the official way takes five pages and twenty-something form fields, and most people do not have that kind of time for a pothole they have already learned to swerve around. So they walk past it, the city fixes what gets reported, and almost nothing gets reported. SolveTO turns a new report into a thirty-second job and adding your voice to an existing one into fifteen seconds. Give people a faster door and they walk through it, no ads, no pitch, just a process that did not cost them their afternoon.
 
