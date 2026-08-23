@@ -1,15 +1,16 @@
 # Site Settings
 title: Ahmed Nadar
-description: "Toronto-based product builder. I ship Rails + AI apps that solve real problems for real people. SolveTO maps 418,000 civic assets. STL Agent helps GTA contractors stop losing $50K/year to slow follow-up."
+description: "Toronto-based product builder with more than 20 years building software. I ship Rails + AI apps that solve real problems for real people. Solve Canada maps over three million pieces of public infrastructure across seven Canadian cities. STL Agent helps GTA contractors stop losing $50K/year to slow follow-up."
 url: "https://ahmednadar.com"
 baseurl: ""
 permalink: /:title/
 markdown: kramdown
+future: true   # build posts dated in the future (lets the June 25 talk post publish on push)
 
 # Author
 author:
   name: Ahmed Nadar
-  role: "Product builder · Toronto"
+  role: "Product builder · 20 years · Toronto"
   tagline: "Rails + AI apps that solve a specific problem for a specific person."
   location: "Toronto, Canada"
   github: AhmedNadar

@@ -4,3 +4,6 @@ _site
 .jekyll-metadata
 vendor
 .plans
+.claude
+CLAUDE.md
+_briefs
