@@ -1,39 +1,11 @@
 # ahmednadar.com
 
-Source for my personal site: writing on Rails, AI agents, and civic tech, plus project pages.
+This is my personal website.
 
-Live at **[ahmednadar.com](https://ahmednadar.com)**.
+I am Ahmed Nadar, a product builder in Toronto. More than twenty years building
+software, mostly Rails, lately Rails and AI together.
 
-## Run it locally
+I write here about what I build and what breaks along the way, and I keep pages
+for the things I am shipping: Solve Canada, STL Agent, and RapidRails.
 
-```bash
-bundle install
-bundle exec jekyll serve
-```
-
-Then open http://localhost:4000. Built with Ruby 3.3.3 and Jekyll 4.4.
-
-## Layout
-
-| Path | What lives there |
-|------|------------------|
-| `_posts/` | Blog posts, `YYYY-MM-DD-slug.md` |
-| `_projects/` | Project pages, output at `/projects/:title/` |
-| `_layouts/`, `_includes/` | Templates |
-| `assets/` | CSS, images, fonts |
-| `_config.yml` | Site config, permalinks, plugins |
-
-Plugins: `jekyll-feed`, `jekyll-seo-tag`, `jekyll-sitemap`.
-
-## Deploys
-
-Push to `master`. GitHub Pages builds and serves it.
-
-One gotcha: Pages builds with its own pinned Jekyll, not the version in the
-`Gemfile`. If something renders locally but not in production, that mismatch is
-the first place to look.
-
-## Use
-
-Code is free to borrow. The writing and images are mine, please do not republish
-them as your own.
+Built with Jekyll, hosted on GitHub Pages.
