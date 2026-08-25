@@ -54,11 +54,11 @@ The market does not care that you do good work. The market rewards the contracto
 
 **Leads stop dying in the inbox.** The homeowner hears from your business in minutes, not the next evening. You see who needs you before they move on to the next name on the list.
 
-**You run follow-up from your phone** — between jobs, not from a desk. One place to see open leads, what needs a call, and what already moved forward.
+**You run follow-up from your phone**, between jobs, not from a desk. One place to see open leads, what needs a call, and what already moved forward.
 
 **Nothing slips because you were on a job.** You get a short morning summary of what came in overnight and what still needs a human touch.
 
-**It is not a generic “we received your message” email.** The reply reads like your business — enough to earn the call or the site visit.
+**It is not a generic “we received your message” email.** The reply reads like your business, enough to earn the call or the site visit.
 
 No CRM login. No second app to learn. If you already use Telegram, it fits how you work. If not, onboarding is part of the install.
 
@@ -76,10 +76,10 @@ No CRM login. No second app to learn. If you already use Telegram, it fits how y
 
 I work with **5 GTA contractors at a time**.
 
-1. **Free Speed-to-Lead Score** — 30 seconds. You see what slow follow-up costs you, why your specific situation leaks, and three things you can fix this week without hiring anyone.
-2. **Speed-to-Lead Audit ($497)** — 20-minute call + a 1-page report: where leads leaked, what it cost, what to fix in 7 days. Full refund if it was not worth it.
-3. **STL install ($2,500 one-time)** — I wire everything to where your leads already come in and turn the full system on. White-glove, about a week.
-4. **STL Operator ($197/month)** — It stays running, monitored, morning briefings on your schedule, one monthly review to tighten follow-up.
+1. **Free Speed-to-Lead Score.** 30 seconds. You see what slow follow-up costs you, why your specific situation leaks, and three things you can fix this week without hiring anyone.
+2. **Speed-to-Lead Audit ($497).** 20-minute call + a 1-page report: where leads leaked, what it cost, what to fix in 7 days. Full refund if it was not worth it.
+3. **STL install ($2,500 one-time).** I wire everything to where your leads already come in and turn the full system on. White-glove, about a week.
+4. **STL Operator ($197/month).** It stays running, monitored, morning briefings on your schedule, one monthly review to tighten follow-up.
 
 Most contractors recover the install cost in the **first month**.
 
@@ -91,21 +91,21 @@ Most contractors recover the install cost in the **first month**.
 
 ## Why me
 
-I am Ahmed, Toronto. I built **[SolveTO](https://solveto.ca)** — civic reporting and open data, live across the city, real residents using it.
+I am Ahmed, Toronto. I built **[SolveTO](https://solveto.ca)**. Civic reporting and open data, live across the city, real residents using it.
 
 I built STL because **my own plumber took three weeks to call me back**. I hired someone else. He never knew he lost the job. That is the same invisible leak your leads have.
 
 I show up in person when it matters and I answer my own phone within an hour. That is the bar I hold STL to for your customers.
 
-Twenty years ago every serious business hired for **search** and for **social**. The next recurring role is whoever makes follow-up and quotes **actually run** — not slides, not experiments. I am not a generic “AI consultant.” I am the **speed-to-lead operator** for a handful of GTA contractors at a time.
+Twenty years ago every serious business hired for **search** and for **social**. The next recurring role is whoever makes follow-up and quotes **actually run**, not slides, not experiments. I am not a generic “AI consultant.” I am the **speed-to-lead operator** for a handful of GTA contractors at a time.
 
 ---
 
 ## What is next on the product
 
-- **Missed calls** — the caller still gets helped and you see what happened on your phone.
-- **Text follow-up** — timed nudges so warm leads do not go cold.
-- **Voicemail in plain language** — you read the gist before you call back.
+- **Missed calls.** The caller still gets helped and you see what happened on your phone.
+- **Text follow-up.** Timed nudges so warm leads do not go cold.
+- **Voicemail in plain language.** You read the gist before you call back.
 
 The goal: **no lead waits** because you did not see it in time.
 

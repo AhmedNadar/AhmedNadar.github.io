@@ -1,6 +1,7 @@
 # Site Settings
 title: Ahmed Nadar
 description: "Toronto-based product builder with more than 20 years building software. I ship Rails + AI apps that solve real problems for real people. Solve Canada maps over three million pieces of public infrastructure across seven Canadian cities. STL Agent helps GTA contractors stop losing $50K/year to slow follow-up."
+tagline: "Rails + AI product builder in Toronto"
 url: "https://ahmednadar.com"
 baseurl: ""
 permalink: /:title/

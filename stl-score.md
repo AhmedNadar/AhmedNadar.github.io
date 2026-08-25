@@ -6,7 +6,7 @@ description: "Find out how much your business is losing every month from slow le
 ---
 
 <p class="page-description">
-  Tell me three things about your business. I will tell you how much money slow follow-up is costing you per month — based on the same data Harvard Business Review used to study 2.24 million leads.
+  Tell me three things about your business. I will tell you how much money slow follow-up is costing you per month, based on the same data Harvard Business Review used to study 2.24 million leads.
 </p>
 
 <div class="stl-calc">
@@ -19,7 +19,7 @@ description: "Find out how much your business is losing every month from slow le
     <div class="stl-row">
       <label for="stl-leads">How many quote requests do you get per month?</label>
       <input type="number" id="stl-leads" name="leads_per_month" min="1" max="500" inputmode="numeric" value="20" required>
-      <span class="stl-hint">Forms, calls, DMs, walk-ins — everything counted.</span>
+      <span class="stl-hint">Forms, calls, DMs, walk-ins, everything counted.</span>
     </div>
 
     <div class="stl-row">
@@ -59,13 +59,13 @@ description: "Find out how much your business is losing every month from slow le
     <!-- Priority 1: dual-CTA cards, shown when result > 0 -->
     <div id="stl-cta-cards" class="stl-cta-cards" style="display:none;">
       <div class="stl-card stl-card-high">
-        <div class="stl-card-head">Skip ahead — book a 20-min audit call</div>
+        <div class="stl-card-head">Skip ahead, book a 20-min audit call</div>
         <p class="stl-card-body">I'll run this calculation with your actual form-submission data, identify the top 3 leaks, and give you a fix plan on the call. $497, full refund if it wasn't worth it.</p>
         <a href="https://cal.com/ahmed-nadar/stl" class="cta-button stl-audit-cta" id="stl-audit-btn" target="_blank" rel="noopener">Book the audit call →</a>
       </div>
       <div class="stl-card stl-card-low">
         <div class="stl-card-head">Not ready yet? Get the free report</div>
-        <p class="stl-card-body">I'll send you a personalized 1-page plan within 24 hours. No spam — one email when the report is ready.</p>
+        <p class="stl-card-body">I'll send you a personalized 1-page plan within 24 hours. No spam. One email when the report is ready.</p>
         <button type="button" class="cta-button stl-report-cta" id="stl-report-btn">Send me the free report</button>
       </div>
     </div>
@@ -75,7 +75,7 @@ description: "Find out how much your business is losing every month from slow le
       <hr class="stl-divider">
       <p class="stl-pitch">
         <strong>One more step.</strong> Drop your email and I will send you a free
-        <em>What to fix in 7 days</em> PDF tailored to a business your size. No spam — Toronto contractors only,
+        <em>What to fix in 7 days</em> PDF tailored to a business your size. No spam. Toronto contractors only,
         one email when the report is ready.
       </p>
 
@@ -95,13 +95,13 @@ description: "Find out how much your business is losing every month from slow le
       </div>
 
       <div class="stl-row">
-        <label for="stl-phone">Phone (optional — fastest way to follow up)</label>
+        <label for="stl-phone">Phone (optional, fastest way to follow up)</label>
         <input type="tel" id="stl-phone" name="phone" autocomplete="tel" inputmode="tel" placeholder="(416) 555-0199" pattern="[\d\s\+\-\(\)\.]{7,30}">
-        <span class="stl-hint">If you give me your phone, you also get an instant AI reply within seconds — see how fast STL feels from the customer's side.</span>
+        <span class="stl-hint">If you give me your phone, you also get an instant AI reply within seconds. See how fast STL feels from the customer's side.</span>
       </div>
 
       <button type="submit" class="cta-button stl-submit">Send me the free report</button>
-      <p class="stl-fineprint">By submitting you also subscribe to the STL newsletter — one short email a week with one Toronto SMB AI playbook. Unsubscribe any time.</p>
+      <p class="stl-fineprint">By submitting you also subscribe to the STL newsletter, one short email a week with one Toronto SMB AI playbook. Unsubscribe any time.</p>
     </div>
 
   </form>
@@ -118,8 +118,8 @@ description: "Find out how much your business is losing every month from slow le
       <h3>What to fix in the next 7 days</h3>
       <ol id="stl-success-fixes" class="stl-success-list stl-success-fixes-list"></ol>
     </div>
-    <p id="stl-success-dogfood" style="display:none;"><strong>If you gave me your phone, check your inbox in the next 60 seconds.</strong> You will get an instant AI reply — that is exactly what your customers experience when STL is running on your business. Same speed. Same warmth.</p>
-    <p class="stl-success-footer">Your full PDF is in the queue — you will get it within 24 hours. If you want the audit call version, <a href="https://cal.com/ahmed-nadar/stl">book here.</a></p>
+    <p id="stl-success-dogfood" style="display:none;"><strong>If you gave me your phone, check your inbox in the next 60 seconds.</strong> You will get an instant AI reply. That is exactly what your customers experience when STL is running on your business. Same speed. Same warmth.</p>
+    <p class="stl-success-footer">Your full PDF is in the queue, you will get it within 24 hours. If you want the audit call version, <a href="https://cal.com/ahmed-nadar/stl">book here.</a></p>
   </div>
 
   <div id="stl-error" class="stl-feedback stl-feedback-error" style="display: none;">
@@ -372,16 +372,16 @@ description: "Find out how much your business is losing every month from slow le
     if (lostMonthly === 0) return '';
     var f = format;
     if (hours <= 0.08) {
-      return "You're already responding faster than 95% of GTA contractors. Your leak is probably not speed — it's volume. STL helps you handle 3x more inquiries without adding staff.";
+      return "You're already responding faster than 95% of GTA contractors. Your leak is probably not speed, it's volume. STL helps you handle 3x more inquiries without adding staff.";
     }
     if (hours <= 0.5 && leads >= 10) {
       return "You're fast, but " + leads + " leads/month means you're juggling follow-ups while you're on the job. STL keeps every inquiry warm while you're on-site, so none slip to a competitor.";
     }
     if (hours <= 2) {
-      return "Most GTA contractors reply in 1–2 days. You're ahead of them, but the top 10% reply in minutes — and they get first pick. That gap costs roughly " + f(lostMonthly) + "/month at your volume.";
+      return "Most GTA contractors reply in 1–2 days. You're ahead of them, but the top 10% reply in minutes, and they get first pick. That gap costs roughly " + f(lostMonthly) + "/month at your volume.";
     }
     if (hours <= 6) {
-      return "You reply the same day — better than 60% of GTA contractors. The gap between same-day and same-hour is where " + f(lostMonthly) + "/month disappears, job by job.";
+      return "You reply the same day, better than 60% of GTA contractors. The gap between same-day and same-hour is where " + f(lostMonthly) + "/month disappears, job by job.";
     }
     if (hours <= 24 && leads >= 10) {
       return "Next-day replies put you behind the 78% of homeowners who hire the first contractor to respond. At " + leads + " leads/month, that gap is costing you roughly " + f(lostMonthly) + "/month.";
@@ -397,20 +397,20 @@ description: "Find out how much your business is losing every month from slow le
   function getLeaks(hours, job, leads) {
     var leaks = [];
     if (hours > 24) {
-      leaks.push("After-hours submissions — most homeowner inquiries arrive between 7–11 PM. By morning, the job is already gone.");
-      leaks.push("On-site interruptions — new leads hit your phone while you're working a job. Each one that waits 4+ hours has a 78% chance of hiring someone else first.");
+      leaks.push("After-hours submissions. Most homeowner inquiries arrive between 7–11 PM. By morning, the job is already gone.");
+      leaks.push("On-site interruptions. New leads hit your phone while you're working a job. Each one that waits 4+ hours has a 78% chance of hiring someone else first.");
     } else if (hours > 6) {
-      leaks.push("On-site interruptions — leads arriving while you're working go unanswered for hours, long enough for a faster competitor to lock them in.");
-      leaks.push("Manual follow-up overload — chasing leads by phone while managing jobs means some inevitably fall through the cracks.");
+      leaks.push("On-site interruptions. Leads arriving while you're working go unanswered for hours, long enough for a faster competitor to lock them in.");
+      leaks.push("Manual follow-up overload. Chasing leads by phone while managing jobs means some inevitably fall through the cracks.");
     } else {
-      leaks.push("Volume ceiling — you reply fast but can't manually follow up with every inquiry. Leads that don't hear back a second time assume you moved on.");
+      leaks.push("Volume ceiling. You reply fast but can't manually follow up with every inquiry. Leads that don't hear back a second time assume you moved on.");
     }
     if (job >= 25000) {
-      leaks.push("High-ticket expectations — homeowners spending $25k+ vet 3–4 contractors. A slow or generic first touch reads as disorganized and loses the shortlist spot.");
+      leaks.push("High-ticket expectations. Homeowners spending $25k+ vet 3–4 contractors. A slow or generic first touch reads as disorganized and loses the shortlist spot.");
     } else if (job >= 8000) {
-      leaks.push("Competitor speed advantage — for mid-size projects, homeowners get 3 quotes and usually hire the first to respond. You're competing on speed, not price.");
+      leaks.push("Competitor speed advantage. For mid-size projects, homeowners get 3 quotes and usually hire the first to respond. You're competing on speed, not price.");
     } else {
-      leaks.push("Convenience wins small jobs — homeowners hire whoever is easiest to reach. Speed matters more than price at this job size.");
+      leaks.push("Convenience wins small jobs. Homeowners hire whoever is easiest to reach. Speed matters more than price at this job size.");
     }
     while (leaks.length < 3) {
       leaks.push("Weekend and holiday inquiries going unanswered while competitors with auto-responses capture the lead before Monday morning.");
@@ -421,8 +421,8 @@ description: "Find out how much your business is losing every month from slow le
   // Priority 4: three tactical fixes the contractor can do without hiring me
   function getFixes() {
     return [
-      "Set up a Google Business Profile auto-reply: \"Thanks for reaching out — I'll call you back within 2 hours between 7am–8pm. Text me at [your number] for urgent jobs.\" Free, takes 10 minutes.",
-      "Add a booking link to your voicemail: \"Can't take your call — book a 5-min callback at [Cal.com link].\" Serious homeowners use it. Cal.com free tier takes 20 minutes to set up.",
+      "Set up a Google Business Profile auto-reply: \"Thanks for reaching out. I'll call you back within 2 hours between 7am–8pm. Text me at [your number] for urgent jobs.\" Free, takes 10 minutes.",
+      "Add a booking link to your voicemail: \"Can't take your call, book a 5-min callback at [Cal.com link].\" Serious homeowners use it. Cal.com free tier takes 20 minutes to set up.",
       "Install an email auto-responder with one qualifying question: \"What's the address and roughly when do you want this done?\" Keeps you top-of-mind and screens out tire-kickers before you call back."
     ];
   }
@@ -449,7 +449,7 @@ description: "Find out how much your business is losing every month from slow le
 
       // Priority 2: annual line
       if (annualEl) {
-        annualEl.textContent = 'That\'s roughly ' + format(lostYearly) + ' per year — enough to cover ' + getContextualComparison(lostYearly) + '.';
+        annualEl.textContent = 'That\'s roughly ' + format(lostYearly) + ' per year, enough to cover ' + getContextualComparison(lostYearly) + '.';
         annualEl.style.display = 'block';
       }
 
@@ -636,7 +636,7 @@ description: "Find out how much your business is losing every month from slow le
     if (phoneValue) {
       var leadName = nameValue || (emailValue.split('@')[0] || 'Calculator visitor');
       var serviceLabel = businessValue
-        ? 'Speed-to-Lead Audit — ' + businessValue
+        ? 'Speed-to-Lead Audit: ' + businessValue
         : 'Speed-to-Lead Audit';
 
       var stlPayload = {
